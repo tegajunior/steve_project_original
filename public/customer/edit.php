@@ -20,6 +20,11 @@
         $customer['country'] = $_POST['country'] ?? '';
         $customer['phone_number'] = $_POST['phone_number'] ?? '';
         $customer['password'] = $_POST['password'] ?? '';
+        //the three fields below should be hidden to the customer edit form
+        //but visible to the admin edit form
+        $customer['balance'] = $_POST['balance'] ?? '';
+        $customer['account_number'] = $_POST['account_number'] ?? '';
+        $customer['activated'] = $_POST['activated'];
 
         $result = update_customer($customer);
 

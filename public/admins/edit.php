@@ -1,89 +1,121 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 
-require_login();
+require_admin_login();
 
 if(!isset($_GET['id'])) {
-  redirect_to(url_for('/staff/admins/index.php'));
+  redirect_to(url_for('/admins/index.php'));
 }
 $id = $_GET['id'];
 
 if(is_post_request()) {
-  $admin = [];
-  $admin['id'] = $id;
-  $admin['first_name'] = $_POST['first_name'] ?? '';
-  $admin['last_name'] = $_POST['last_name'] ?? '';
-  $admin['email'] = $_POST['email'] ?? '';
-  $admin['username'] = $_POST['username'] ?? '';
-  $admin['password'] = $_POST['password'] ?? '';
-  $admin['confirm_password'] = $_POST['confirm_password'] ?? '';
+  $customer = [];
+  $customer['id'] = $id;
+  $customer['first_name'] = $_POST['first_name'] ?? '';
+  $customer['last_name'] = $_POST['last_name'] ?? '';
+  $customer['gender'] = $_POST['gender'] ?? '';
+  $customer['occupation'] = $_POST['occupation'];
+  $customer['date_of_birth'] = $_POST['date_of_birth'] ?? '';
+  $customer['address'] = $_POST['address'] ?? '';
+  $customer['country'] = $_POST['country'] ?? '';
+  $customer['phone_number'] = $_POST['phone_number'] ?? '';
+  $customer['password'] = $_POST['password'] ?? '';
+  //the three fields below should be hidden to the customer edit form
+  //but visible to the admin edit form
+  $customer['balance'] = $_POST['balance'] ?? '';
+  $customer['account_number'] = $_POST['account_number'] ?? '';
+  $customer['activated'] = $_POST['activated'];
 
-  $result = update_admin($admin);
+  $result = update_customer($customer);
   if($result === true) {
-    $_SESSION['message'] = 'Admin updated.';
-    redirect_to(url_for('/staff/admins/show.php?id=' . $id));
+    $_SESSION['message'] = 'Customer updated.';
+    redirect_to(url_for('/admins/show.php?id=' . $id));
   } else {
     $errors = $result;
   }
 } else {
-  $admin = find_admin_by_id($id);
+  $customer = find_customer_by_id($id);
 }
 
 ?>
 
-<?php $page_title = 'Edit Admin'; ?>
+<?php $page_title = 'Edit Customer'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/staff/admins/index.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/admins/index.php'); ?>">&laquo; Back to List</a>
 
-  <div class="admin edit">
-    <h1>Edit Admin</h1>
+  <div class="customer edit">
+    <h1>Edit Customer</h1>
 
     <?php echo display_errors($errors); ?>
 
-    <form action="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/admins/edit.php?id=' . h(u($id))); ?>" method="post">
       <dl>
         <dt>First name</dt>
-        <dd><input type="text" name="first_name" value="<?php echo h($admin['first_name']); ?>" /></dd>
+        <dd><input type="text" name="first_name" value="<?php echo h($customer['first_name']); ?>" /></dd>
       </dl>
 
       <dl>
         <dt>Last name</dt>
-        <dd><input type="text" name="last_name" value="<?php echo h($admin['last_name']); ?>" /></dd>
+        <dd><input type="text" name="last_name" value="<?php echo h($customer['last_name']); ?>" /></dd>
       </dl>
 
       <dl>
         <dt>Username</dt>
-        <dd><input type="text" name="username" value="<?php echo h($admin['username']); ?>" /></dd>
+        <dd><input type="text" name="gender" value="<?php echo h($gender['gender']); ?>" /></dd>
+      </dl>
+
+        <dl>
+          <dt>Occupation</dt>
+          <dd><input type="text" name="occupation" value="<?php echo h($customer['occupation']; ?>"></dd>
+        </dl>
+
+        <dl>
+          <dt>Gender</dt>
+          <dd><input type="hidden" name="date_of_birth" value="<?php echo h($customer['date_of_birth']; ?>"></dd>
+        </dl>
+
+        <dl>
+          <dt>Address</dt>
+          <dd><input type="text" name="address" value="<?php echo h($customer['address']; ?>"></dd>
+        </dl>
+
+        <dl>
+          <dt>Country</dt>
+          <dd><input type="hidden" name="country" value="<?php echo h($customer['country']); ?>"></dd>
+        </dl>
+
+        <dl>
+          <dt>Phone Number</dt>
+          <dd><input type="text" name="phone_number" value="<?php echo h($customer['phone_number']); ?>"></dd>
+        </dl>
+        <dl>
+          <dt>Password</dt>
+          <dd><input type="password" name="password" value="<?php echo h($customer['password']); ?>"></dd>
+      </dl>
+        <dl>
+          <dt>Balance</dt>
+          <dd><input type="text" name="balance" value="<?php echo h($customer['balance']); ?>"></dd>
+        </dl>
+
+      <dl>
+        <dt>Account Number</dt>
+        <dd><input type="text" name="account_number" value="<?php echo h($customer['account_number']); ?>"></dd>
       </dl>
 
       <dl>
-        <dt>Email</dt>
-        <dd><input type="text" name="email" value="<?php echo h($admin['email']); ?>" /><br /></dd>
+        <dt>Activated</dt>
+        <dd><input type="text" name="activated" value="<?php echo h($customer['activated']); ?>"></dd>
       </dl>
 
-      <dl>
-        <dt>Password</dt>
-        <dd><input type="password" name="password" value="" /></dd>
-      </dl>
-
-      <dl>
-        <dt>Confirm Password</dt>
-        <dd><input type="password" name="confirm_password" value="" /></dd>
-      </dl>
-      <p>
-        Passwords should be at least 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.
-      </p>
-      <br />
 
       <div id="operations">
-        <input type="submit" value="Edit Admin" />
+        <input type="submit" value="Edit Customer" />
       </div>
     </form>
-
   </div>
 
 </div>
