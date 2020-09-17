@@ -15,7 +15,7 @@ if(is_post_request()) {
   if($result) {
     //remove image from folder
     if(file_exists('../customer'. $customer['passport_url'])) {
-      unlink('../customer' . $customer['passport_url'])
+      unlink('../customer' . $customer['passport_url']);
     } else{
       // file doesn't exist, do nothing!
     }
