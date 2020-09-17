@@ -96,7 +96,7 @@
     $sql .= "'" . db_escape($db, $customer['passport_url']) . "',";
     $sql .= "'" . db_escape($db, $customer['activated']) . "',";
     $sql .= "'" . db_escape($db, $customer['balance']) . "',";
-    $sql .= "'" . db_escape($db, $customer['account_number']) . "',";
+    $sql .= "'" . db_escape($db, $customer['account_number']) . "'";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
     // For INSERT statements, $result is true/false
