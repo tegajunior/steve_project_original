@@ -102,7 +102,7 @@
                         </div>
                         <form onsubmit="return registerLoadingSpin()" action="<?php echo url_for('/customer/new.php'); ?>" method="post">
 
-                            <!-- <input type="text" name="first_name" placeholder="Firstname*" required autofocus>
+                            <input type="text" name="first_name" placeholder="Firstname*" required autofocus>
                             <input type="text" name="last_name" placeholder="Lastname*" required>
 
                             <select name="gender" id="gender">
@@ -111,7 +111,7 @@
                                 <option value="male">Female</option>
                             </select> 
 
-                            <input type="text" name="email" placeholder="Email" autocomplete="" required> -->
+                            <input type="text" name="email" placeholder="Email" autocomplete="" required>
 
                             <div class="position-relative">
                                 <i class="show-password fas fa-eye-slash position-absolute"></i>
@@ -123,7 +123,7 @@
                                 <input type="password" class="password" id="password-two" name="confirm_password" placeholder="confirm Password" autocomplete="off" required>
                             </div>
                             
-                            <!-- <input type="date" name="date" placeholder="Date of Birth*" required>
+                            <input type="date" name="date" placeholder="Date of Birth*" required>
 
                             <input type="text" name="occupation" placeholder="Occupation" required>
 
@@ -133,7 +133,7 @@
 
                             <input type="text" name="address" placeholder="address" required>
 
-                            <input type="text" name="phone_number" placeholder="phone number" required> -->
+                            <input type="text" name="phone_number" placeholder="phone number" required>
 
                             <div class="text-center my-2">
                                 <span class="my-spin spinner-border spinner-border-sm text-success"></span>
