@@ -7,6 +7,26 @@ let loadingSpin = () => {
     })
 }
 
+let registerLoadingSpin = () => {
+    let passwordOne = document.getElementById("password-one").value;
+    let passwordTwo = document.getElementById("password-two").value;
+    if (passwordOne == passwordTwo && passwordOne.toString().length >= 8) {
+        loadingSpin()
+        return true
+    } else if(passwordOne.toString().length < 8 && passwordOne !== passwordTwo) {
+        // loadingSpin();
+        alert("password did not match and password is not upto 8 character")
+        return false
+    } else if (passwordOne !== passwordTwo) {
+        // loadingSpin();
+        alert("password did not match")
+        return false
+    } else {
+        // loadingSpin();
+        alert("password is less than 8 characters")
+        return false
+    }
+}
 
 let showPassword = () => {
     myPassword = document.querySelectorAll(".password");

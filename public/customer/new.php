@@ -100,7 +100,7 @@
                             <p class="login-title2 text-center text-white">Let's setup your account real quick!</p>
                             <?php echo display_errors($errors); ?>
                         </div>
-                        <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/new.php'); ?>" method="post">
+                        <form onsubmit="return registerLoadingSpin()" action="<?php echo url_for('/customer/new.php'); ?>" method="post">
 
                             <input type="text" name="first_name" placeholder="Firstname*" required autofocus>
                             <input type="text" name="last_name" placeholder="Lastname*" required>
@@ -115,12 +115,12 @@
 
                             <div class="position-relative">
                                 <i class="show-password fas fa-eye-slash position-absolute"></i>
-                                <input type="password" class="password" name="password" placeholder="Password" autocomplete="off" required>
+                                <input type="password" class="password" id="password-one" name="password" placeholder="Password" autocomplete="off" required>
                             </div>
 
                             <div class="position-relative">
                                 <i class="show-password fas fa-eye-slash position-absolute"></i>
-                                <input type="password" class="password" name="confirm_password" placeholder="confirm Password" autocomplete="off" required>
+                                <input type="password" class="password" id="password-two" name="confirm_password" placeholder="confirm Password" autocomplete="off" required>
                             </div>
                             
                             <input type="date" name="date" placeholder="Date of Birth*" required>
