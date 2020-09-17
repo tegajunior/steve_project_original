@@ -138,6 +138,14 @@ hr{
     top: 50%;
     transform: translate(-2%, -50%);
 }
+
+.upload-label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    cursor:pointer;
+    color:white;
+}
+
 .errors{
     /* display: inline-block; */
     border: 2px solid red;

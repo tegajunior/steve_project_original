@@ -73,27 +73,40 @@
                 <!-- end of left section Slide -->
 
                 <!-- right section login -->
-                <div class="loginDiv col-md-5 p-0">
-                    <div class="loginDivWrapper">
-                        <div class="text-center pt-5 pb-3">
-                            <img class="logo" src="<?php echo url_for('/images/logo.png'); ?>" alt="Logo">
-                        </div>
-
-                        <!-- login starts here! -->
-                        <div class="loginCon">
-                            <div class="TitleCon mb-3">
-                                <p class="loginTitle text-center text-white">Uplaod Passport!</p>
-                            </div>
-                            <form action="">
-                                <input type="text" placeholder="Username" required>
-                                <input type="password" placeholder="Password" required>
-                                <input type="submit" value="Upload">
-                            </form>
-                        </div>
-                        <!-- login ends here! -->
+                <div class="login-section col-md-5 m-0 p-5">
+                    <div class="text-center pb-4">
+                        <img class="logo" src="<?php echo url_for('/images/logo.png'); ?>" alt="Logo">
                     </div>
+
+                    <!-- login starts here! -->
+                    <div class="login-form p-3">
+                        <div class="TitleCon">
+                            <h3 class="login-title text-center text-white">Welcome!</h3>
+                            <?php echo display_errors($errors); ?>
+                        </div>
+                        <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/upload.php'); ?>" method="post" enctype="multipart/form-data">
+                            <div class="bg-white">
+                                <input type="file" name="passport_url" accept="image/*" id="file">
+                            </div>
+
+                            <div class="">
+                                <label class="upload-label" for="file">Upload Image</label>
+                            </div>
+
+                            <div class="p-5" style="background-color:white;">
+                                <img id="output" width="200" />
+                            </div>
+
+                            <button class="btn form-login-btn p-2" id="login-btn" type="submit">Login</button>
+                            <div class="text-center my-2">
+                                <span class="my-spin spinner-border spinner-border-sm text-success"></span>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- login ends here! -->
                 </div>
-                    <!-- end of right section login -->
+                <!-- end of right section login -->
             </div>
             <!-- END of main form section -->
 
@@ -103,5 +116,7 @@
             </div>
             <!-- END of footer -->
         </div>
+
+        <script src="<?php echo url_for('/jsScripts/upload.js') ?>"></script>
     </body>
 </html>
