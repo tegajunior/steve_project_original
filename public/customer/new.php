@@ -6,7 +6,8 @@
         $customer['last_name'] = $_POST['last_name'] ?? '';
         $customer['gender'] = $_POST['gender'] ?? '';
         $customer['occupation'] = $_POST['occupation'];
-        $customer['date_of_birth'] = $_POST['date_of_birth'] ?? '';
+        $date = new DateTime($_POST['date_of_birth']) ?? '';
+        $customer['date_of_birth'] = $date->format('y-m-d');
         $customer['address'] = $_POST['address'] ?? '';
         $customer['email'] = $_POST['email'] ?? '';
         $customer['country'] = $_POST['country'] ?? '';

@@ -5,7 +5,7 @@ require_once('../../private/initialize.php');
 require_admin_login();
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
-$admin = find_customer_by_id($id);
+$customer = find_customer_by_id($id);
 
 ?>
 
@@ -18,7 +18,7 @@ $admin = find_customer_by_id($id);
 
   <div class="customer-show">
 
-    <h1>Admin: <?php echo h($admin['username']); ?></h1>
+    <h1>Customer: <?php echo h($customer['first_name']); ?></h1>
 
     <div class="actions">
       <a class="action" href="<?php echo url_for('/admins/edit.php?id=' . h(u($customer['id']))); ?>">Edit</a>
