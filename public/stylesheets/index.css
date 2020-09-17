@@ -1,0 +1,358 @@
+/* Site Colors:
+  #e03e52 - pink
+  #c8ced2 - grey
+  #f07b27 - orange
+  #786758 - brown
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+
+html {
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* slide show section */
+.carousel-item{
+  height: 500px;
+}
+.carousel-item img{
+  width: 100%;
+  /* min-height: 60vh; */
+  /* max-height: 70vh; */
+  height: inherit;
+}
+
+.carousel-caption h3, .carousel-caption p{
+  text-shadow: 0 0 10px #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.carousel-caption h3{
+  font-size: 24px;
+}
+
+.carousel-caption p{
+  font-size: 18px;
+}
+/* END of slide show section *
+
+/* customized-banking */
+.customized-banking h4, .customized-banking h2, .customized-banking p{
+  font-family: 'Roboto', sans-serif;
+}
+.customized-banking h4{
+  font-size: 20px;
+}
+.customized-banking h2{
+  font-size: 32px;
+}
+.customized-banking p{
+  font-size: 18px;
+}
+
+.what-you-can-do i{
+  color: rgb(67, 166, 228);
+}
+.what-you-can-do div hr {
+  width: 40px;
+  margin: auto;
+  border-bottom: 3px solid #999;
+  transition: .5s width;
+}
+.what-you-can-do div:hover hr {
+  width: 50%;
+  border-bottom: 3px solid rgb(67, 166, 228);
+}
+.what-you-can-do a{
+  color: #999;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+.what-you-can-do a:hover{
+  text-decoration: none;
+}
+/* END of customized-banking */
+
+
+/* mobilebanking  section */
+.mobile-banking{
+  background-image: url(../images/homepage_assets/mobilebanking_banner_new.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mobile-banking div{
+  border-radius: 5px;
+  box-shadow: 0 0 10px #fff;
+  background-color: #000;
+}
+/* END of mobilebanking  section */
+
+/* about us section */
+.section-header{
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  color: rgb(67, 166, 228);
+}
+.about-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+.header-rule{
+  width: 40px;
+  border: 5px solid #999;
+  margin: auto;
+}
+/* END of about us section */
+
+/* contact us section */
+.contact form input, .contact form button, .contact form span{
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+.contact-side{
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
+.contact-textarea {
+  outline: none;
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* END of contact us section */
+
+
+@media (max-width:1200px) {
+
+  /* slide show section */
+  .carousel-caption h3{
+    font-size: 24px;
+  }
+
+  .carousel-caption p{
+    font-size: 16px;
+  }
+  /* END of slide show section *
+
+  /* customized-banking */
+  .customized-banking h4{
+    font-size: 20px;
+  }
+  .customized-banking h2{
+    font-size: 28px;
+  }
+  .customized-banking p{
+    font-size: 16px;
+  }
+  .what-you-can-do a{
+    font-size: 14px;
+  }
+  /* END of customized-banking */
+
+
+  /* mobilebanking  section */
+    .mobile-banking div{
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fff;
+    background-color: #000;
+  }
+
+  .mobile-banking div h3 {
+    font-size: 24px;
+  }
+
+  .mobile-banking div p, .mobile-banking div li, .mobile-banking div button {
+    font-size: 16px;
+  }
+  /* END of mobilebanking  section */
+
+
+  /* about us section */
+  .section-header{
+    font-size: 32px;
+  }
+  .about-section p {
+    font-size: 16px;
+  }
+  /* END of about us section */
+
+  /* contact us section */
+  .contact form input, .contact form button, .contact form span{
+    font-size: 16px;
+  }
+  .contact-side{
+    font-size: 20px;
+  }
+  .contact-textarea {
+    font-size: 16px;
+  }
+  /* END of contact us section */
+
+}
+
+@media (max-width:992px) {
+  
+  /* slide show section */
+  .carousel-caption h3{
+    font-size: 18px;
+  }
+
+  .carousel-caption p{
+    font-size: 16px;
+  }
+  /* END of slide show section *
+
+  /* customized-banking */
+  .customized-banking h4{
+    font-size: 18px;
+  }
+  .customized-banking h2{
+    font-size: 22px;
+  }
+  .customized-banking p{
+    font-size: 16px;
+  }
+  .what-you-can-do a{
+    font-size: 14px;
+  }
+  /* END of customized-banking */
+
+
+  /* mobilebanking  section */
+   .mobile-banking div{
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fff;
+    background-color: #000;
+  }
+
+  .mobile-banking div h3 {
+    font-size: 18px;
+  }
+
+  .mobile-banking div p, .mobile-banking div li, .mobile-banking div button {
+    font-size: 16px;
+  }
+  /* END of mobilebanking  section */
+
+
+  /* about us section */
+  .section-header{
+    font-size: 24px;
+  }
+  .about-section p {
+    font-size: 16px;
+  }
+  /* END of about us section */
+
+  /* contact us section */
+  .contact form input, .contact form button, .contact form span{
+    font-size: 16px;
+  }
+  .contact-side{
+    font-size: 18px;
+  }
+  .contact-textarea {
+    font-size: 16px;
+  }
+  /* END of contact us section */
+
+  /* footer */
+  .footer-list li, .footer-para{
+    font-size: 12px;
+  }
+
+}
+
+
+@media (max-width:576px) {
+
+  /* slide show section */
+  .carousel-item{
+    height: 300px;
+  }
+  .carousel-caption h3{
+    font-size: 18px;
+  }
+
+  .carousel-caption p{
+    font-size: 14px;
+  }
+  /* END of slide show section *
+
+  /* customized-banking */
+  .customized-banking h4{
+    font-size: 14px;
+  }
+  .customized-banking h2{
+    font-size: 20px;
+  }
+  .customized-banking p{
+    font-size: 14px;
+  }
+  .what-you-can-do a{
+    font-size: 14px;
+  }
+  /* END of customized-banking */
+
+
+  /* mobilebanking  section */
+  .mobile-banking{
+    background-image: none;
+  }
+
+  .mobile-banking div{
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fff;
+    background-color: #000;
+  }
+
+  .mobile-banking div h3 {
+    font-size: 18px;
+  }
+
+  .mobile-banking div p, .mobile-banking div li, .mobile-banking div button {
+    font-size: 14px;
+  }
+  /* END of mobilebanking  section */
+
+
+  /* about us section */
+  .section-header{
+    font-size: 22px;
+  }
+  .about-section p {
+    font-size: 14px;
+  }
+  /* END of about us section */
+
+  /* contact us section */
+  .contact form input, .contact form button, .contact form span{
+    font-size: 14px;
+  }
+  .contact-side{
+    font-size: 16px;
+  }
+  .contact-textarea {
+    font-size: 14px;
+  }
+  /* END of contact us section */
+
+  /* footer */
+  .footer-list{
+    flex-wrap: wrap;
+  }
+}

@@ -1,37 +1,39 @@
-<?php
-  // Default values to prevent errors
-  $page_id = $page_id ?? '';
-  $subject_id = $subject_id ?? '';
-  $visible = $visible ?? true;
-?>
 
-<nav>
-  <?php $nav_subjects = find_all_subjects(['visible' => $visible]); ?>
-  <ul class="subjects">
-    <?php while($nav_subject = mysqli_fetch_assoc($nav_subjects)) { ?>
-      <?php // if(!$nav_subject['visible']) { continue; } ?>
-      <li class="<?php if($nav_subject['id'] == $subject_id) { echo 'selected'; } ?>">
-        <a href="<?php echo url_for('index.php?subject_id=' . h(u($nav_subject['id']))); ?>">
-          <?php echo h($nav_subject['menu_name']); ?>
-        </a>
+<nav class="navbar navbar-expand-md bg-dark px-3 py-0 position-sticky sticky-top">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#goto-home">
+        <img src="<?php echo url_for('/images/logo.png'); ?>" alt="site-logo">
+    </a>
 
-        <?php if($nav_subject['id'] == $subject_id) { ?>
-          <?php $nav_pages = find_pages_by_subject_id($nav_subject['id'], ['visible' => $visible]); ?>
-          <ul class="pages">
-            <?php while($nav_page = mysqli_fetch_assoc($nav_pages)) { ?>
-              <?php // if(!$nav_page['visible']) { continue; } ?>
-              <li class="<?php if($nav_page['id'] == $page_id) { echo 'selected'; } ?>">
-                <a href="<?php echo url_for('index.php?id=' . h(u($nav_page['id']))); ?>">
-                  <?php echo h($nav_page['menu_name']); ?>
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <i class="fas fa-bars toggle-icon"></i>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link my-nav-link" href="<?php echo url_for('/index.php/#goto-home'); ?>">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link my-nav-link" href="<?php echo url_for('/index.php/#about'); ?>">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link my-nav-link" href="<?php echo url_for('/index.php/#contact'); ?>">Contact</a>
+            </li>
+        </ul>
+        <ul class="login navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link nav-link-right" href="<?php echo url_for('/customer/new.php'); ?>">
+                    <i class="fas fa-user" size="5x"></i> Sign Up
                 </a>
-              </li>
-            <?php } // while $nav_pages ?>
-          </ul>
-          <?php mysqli_free_result($nav_pages); ?>
-        <?php } // if($nav_subject['id'] == $subject_id) ?>
-
-      </li>
-    <?php } // while $nav_subjects ?>
-  </ul>
-  <?php mysqli_free_result($nav_subjects); ?>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-right" href="<?php echo url_for('/customer/login.php'); ?>">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>

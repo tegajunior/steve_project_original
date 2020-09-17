@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* navigation style */
+.navbar{
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.8);
+  }
+  .navbar-brand img{
+    width: 100px;
+    height: 50px;
+  }
+  .my-nav-link{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 20px 0;
+    transition: .3s color, .3s background;
+  }
+  .active{
+    color: #000;
+    background-color: #fff;
+  }
+  
+  .my-nav-link:hover{
+    color: #000;
+    background-color: #fff;
+  }
+  
+  .nav-link-right{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px 0;
+    transition: .3s color;
+  }
+  .nav-link-right:hover{
+    color: #000;
+  }
+  
+  .toggle-icon{
+    color:#fff;
+    font-size:20px;
+  }
+  /* END of navigation style */
+  
+  @media (max-width:1200px) {
+    /* navigation style */
+    .my-nav-link{
+      font-size: 15px;
+      padding: 5px;
+    }
+    .nav-link-right{
+      font-size: 14px;
+      padding: 10px;
+      background-color: transparent;
+    }
+    .toggle-icon{
+      font-size:20px;
+    }
+    /* END of navigation style */
+
+    /* footer */
+    .footer-list li, .footer-para{
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width:576px) {
+    .footer-list li, .footer-para{
+      font-size: 12px;
+      width: 100%;
+    }
+  
+  }

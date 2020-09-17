@@ -1,0 +1,160 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+
+html {
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.login-container{
+    background-image: url("../images/page_assets/slide3.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.login-wrapper{
+    background-color: rgba(0, 0, 0, 0.6);
+    height: inherit;
+    overflow: auto;
+}
+
+/* left section Slide */
+.slideHeader{
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+.slide p{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+hr{
+    background-color: #fff;
+    border-bottom: 2px solid #fff;
+    width: 70%;
+}
+/* end of left section Slide */
+
+/* right section login-section */
+.login-section{
+    background-color:rgba(0, 0, 0, 0.2);
+    height: inherit;
+    overflow: auto;
+}
+
+.logo{
+    width: 100px;
+    height: auto;
+}
+.login-form{
+    box-shadow: 0 0 10px #fff;
+    border-radius: 5px;
+}
+
+.login-title{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+.login-title2{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-section form input, #gender, #country{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: 2px solid #999;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.login-section form input:focus{
+    border: 2px solid #000;
+    transition: .9s border-color;
+}
+
+#country, #gender{
+    background-color: #fff;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+}
+
+.login-forget, .login-reg{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+.login-anchor, .login-anchor:hover{
+    text-decoration: none;
+    color: rgb(214, 0, 0);
+}
+
+.form-login-btn{
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    width: 50%;
+    margin: 50px auto 20px auto;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    color: #333;
+    font-size: 20px;
+    background-color: #fff;
+}
+.form-login-btn:hover{
+    color: #000;
+}
+.spinner-border{
+    display: none;
+    margin: auto;
+}
+.show-password{
+    color: #000;
+    right: 2%;
+    top: 50%;
+    transform: translate(-2%, -50%);
+}
+.errors{
+    /* display: inline-block; */
+    border: 2px solid red;
+    color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.errors ul{
+    padding-left: 1em;
+    margin-bottom: 0;
+}
+
+
+/* end of right section loginDiv */
+
+@media only screen and (max-width:767px){
+    .slide{
+        display: none;
+    }
+}
