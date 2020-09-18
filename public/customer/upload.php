@@ -86,15 +86,13 @@
                         </div>
                         <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/upload.php'); ?>" method="post" enctype="multipart/form-data">
                             <div class="bg-white">
-                                <input type="file" name="passport_url" accept="image/*" id="file">
+                                <input class="container-fluid p-0" type="file" name="passport_url" accept="image/*" id="file">
                             </div>
 
-                            <div class="">
-                                <label class="upload-label" for="file">Upload Image</label>
-                            </div>
+                            <label class="upload-label" for="file">Upload Image</label>
 
-                            <div class="p-5" style="background-color:white;">
-                                <img id="output" width="200" />
+                            <div class="image-container text-center">
+                                <img id="output" class="rounded" />
                             </div>
 
                             <button class="btn form-login-btn p-2" id="login-btn" type="submit">Login</button>
