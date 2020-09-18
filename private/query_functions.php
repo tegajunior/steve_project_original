@@ -113,7 +113,7 @@
   function update_passport_url($path_filename_ext, $id) {
     global $db;
 
-    $sql = "UPDATE cutomers SET ";
+    $sql = "UPDATE customers SET ";
     $sql .= "passport_url = '" . db_escape($db, $path_filename_ext) . "' ";
     $sql .= "WHERE id = '" . db_escape($db, $id) . "' ";
     $sql .= "LIMIT 1";
@@ -203,11 +203,11 @@
   }
 
 
-  function delete_customer($customer) {
+  function delete_customer($id) {
     global $db;
   
     $sql = "DELETE FROM customers ";
-    $sql .= "WHERE id='" . db_escape($db, $customer['id']) . "' ";
+    $sql .= "WHERE id='" . db_escape($db, $id) . "' ";
     $sql .= "LIMIT 1;";
     $result = mysqli_query($db, $sql);
 

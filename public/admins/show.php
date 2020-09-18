@@ -28,7 +28,7 @@ $customer = find_customer_by_id($id);
     <div class="attributes">
       <dl>
         <dt>Passport</dt>
-        <dd><img src="<?php echo h($customer['passport_url']); ?>" alt="profile photo"></dd>
+        <dd><img src="<?php echo url_for('/' . 'customer/' . $customer['passport_url']); ?>" alt="profile photo"></dd>
       </dl>
       <dl>
         <dt>First name</dt>
@@ -80,7 +80,7 @@ $customer = find_customer_by_id($id);
                if($customer['activated'] == 1)  {
                  echo 'Yes';
                } else {
-                 echo 'True';
+                 echo 'No';
                }
             ?>
         </dd>

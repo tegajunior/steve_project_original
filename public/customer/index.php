@@ -1,6 +1,6 @@
 <?php require_once('../../private/initialize.php'); ?>
 
-<?php //require_customer_login(); ?>
+<?php require_customer_login(); ?>
 
 <!DOCTYPE html>
 <html lang="en">

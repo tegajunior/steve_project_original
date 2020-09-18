@@ -1,18 +1,19 @@
 <?php 
     require_once('../../private/initialize.php');
+
     if(!isset($_GET['id'])) {
         redirect_to(url_for('/customer/new.php'));
     } else {
         $id = $_GET['id'];
     }
     if(is_post_request())   {
-        $target_dir = "/uploads";
+        $target_dir = "uploads/";
         $file = $_FILES['my_file']['name'];
         $path = pathinfo($file);
         $filename = $path['filename'];
         $ext = $path['extension'];
         $temp_name = $_FILES['my_file']['tmp_name'];
-        $path_filename_ext = $target_dir . $filename . $ext;
+        $path_filename_ext = $target_dir . $filename . '.' . $ext;
 
         //check if filename exits already
         if(file_exists($path_filename_ext)) {
@@ -84,9 +85,10 @@
                             <h3 class="login-title text-center text-white">Welcome!</h3>
                             <?php echo display_errors($errors); ?>
                         </div>
-                        <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/upload.php'); ?>" method="post" enctype="multipart/form-data">
+                        <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/upload.php?id=' . h(u($id))); 
+                        ?>" method="post" enctype="multipart/form-data">
                             <div class="bg-white">
-                                <input class="container-fluid p-0" type="file" name="passport_url" accept="image/*" id="file">
+                                <input class="container-fluid p-0" type="file" name="my_file" accept="image/*" id="file">
                             </div>
 
                             <label class="upload-label" for="file">Upload Image</label>

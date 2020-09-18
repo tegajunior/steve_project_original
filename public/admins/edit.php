@@ -65,22 +65,22 @@ if(is_post_request()) {
 
       <dl>
         <dt>Username</dt>
-        <dd><input type="text" name="gender" value="<?php echo h($gender['gender']); ?>" /></dd>
+        <dd><input type="text" name="gender" value="<?php echo h($customer['gender']); ?>" /></dd>
       </dl>
 
         <dl>
           <dt>Occupation</dt>
-          <dd><input type="text" name="occupation" value="<?php echo h($customer['occupation']; ?>"></dd>
+          <dd><input type="text" name="occupation" value="<?php echo h($customer['occupation']); ?>"></dd>
         </dl>
 
         <dl>
           <dt>Gender</dt>
-          <dd><input type="hidden" name="date_of_birth" value="<?php echo h($customer['date_of_birth']; ?>"></dd>
+          <dd><input type="hidden" name="date_of_birth" value="<?php echo h($customer['date_of_birth']); ?>"></dd>
         </dl>
 
         <dl>
           <dt>Address</dt>
-          <dd><input type="text" name="address" value="<?php echo h($customer['address']; ?>"></dd>
+          <dd><input type="text" name="address" value="<?php echo h($customer['address']); ?>"></dd>
         </dl>
 
         <dl>

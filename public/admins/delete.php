@@ -12,16 +12,17 @@ $customer = find_customer_by_id($id);
 
 if(is_post_request()) {
   $result = delete_customer($id);
-  if($result) {
+   if($result) {
     //remove image from folder
-    if(file_exists('../customer'. $customer['passport_url'])) {
-      unlink('../customer' . $customer['passport_url']);
+    if(file_exists('../customer/'. $customer['passport_url'])) {
+      unlink('../customer/' . $customer['passport_url']);
     } else{
       // file doesn't exist, do nothing!
     }
-  }
+   
   $_SESSION['message'] = 'Customer deleted.';
   redirect_to(url_for('/admins/index.php'));
+  }
 }
 
 ?>
