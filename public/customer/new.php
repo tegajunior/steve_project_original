@@ -106,7 +106,7 @@
                             <input type="text" name="last_name" placeholder="Lastname*" required>
 
                             <select name="gender" id="gender">
-                                <option value="default">selectOption</option>
+                                <option value="default">Gender</option>
                                 <option value="male">Male</option>
                                 <option value="male">Female</option>
                             </select> 
@@ -128,7 +128,7 @@
                             <input type="text" name="occupation" placeholder="Occupation" required>
 
                             <select name="country" id="country">
-                                <option value="default">selectOption</option>
+                                <option value="default">select-Country</option>
                             </select>
 
                             <input type="text" name="address" placeholder="address" required>
@@ -155,6 +155,6 @@
             <!-- END of footer -->
         </div>
 
-        <script src="<?php echo url_for('/jsScripts/login.js') ?>"></script>
+        <script src="<?php echo url_for('/jsScripts/new.js') ?>"></script>
     </body>
 </html>

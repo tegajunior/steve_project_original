@@ -71,16 +71,16 @@ hr{
 }
 
 .login-title{
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-}
-.login-title2{
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
 }
+.login-title2{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
 
-.login-section form input, #gender, #country{
-    font-size: 24px;
+.login-section form input[type="text"], .login-section form input[type="password"], .login-section form input[type="date"], #gender, #country{
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     color: #222;
     display: block;
@@ -118,7 +118,6 @@ hr{
     display: block;
     width: 50%;
     margin: 50px auto 20px auto;
-    height: 50px;
     border: none;
     border-radius: 50px;
     color: #333;
@@ -138,6 +137,19 @@ hr{
     top: 50%;
     transform: translate(-2%, -50%);
 }
+
+.upload-label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+}
+#output{
+    width: 200px;
+    box-shadow: 0 0 10px #fff;
+    padding: 2px;
+}
+
 .errors{
     /* display: inline-block; */
     border: 2px solid red;
