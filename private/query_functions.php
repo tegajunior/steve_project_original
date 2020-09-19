@@ -235,6 +235,29 @@
     mysqli_free_result($result);
     return $admin; // returns an assoc. array
   }
+
+  function send_message_to_admin($user) {
+    global $db;
+
+    $sql = "INSERT INTO messages ";
+    $sql .= "(sender, content) ";
+    $sql .= "VALUES (";
+    $sql .= "'" . db_escape($db, $user['email']) . "',";
+    $sql .= "'" . db_escape($db, $user['content']) . "'";
+    $sql .= ")";
+
+    $result = mysqli_query($db, $sql);
+
+    if($result) {
+      return true;
+    } else {
+      // INSERT failed
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+  }
+  
   /*__________end of steve_project________*/
 
   function update_subject($subject) {

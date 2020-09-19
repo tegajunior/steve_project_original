@@ -117,15 +117,15 @@
   // * For new records, provide only the username.
   // * For existing records, provide current ID as second argument
   //   has_unique_username('johnqpublic', 4)
-  function has_unique_username($username, $current_id="0") {
+  function has_unique_email($email, $current_id="0") {
     global $db;
 
-    $sql = "SELECT * FROM admins ";
-    $sql .= "WHERE username='" . db_escape($db, $username) . "' ";
+    $sql = "SELECT * FROM customers ";
+    $sql .= "WHERE email='" . db_escape($db, $email) . "' ";
     $sql .= "AND id != '" . db_escape($db, $current_id) . "'";
 
     $result = mysqli_query($db, $sql);
-    $admin_count = mysqli_num_rows($result);
+    $customer_count = mysqli_num_rows($result);
     mysqli_free_result($result);
 
     return $admin_count === 0;

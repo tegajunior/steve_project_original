@@ -18,14 +18,21 @@
         $customer['balance'] = 0.0000;
         $customer['account_number'] = 'NA';
 
-        $result = insert_customer($customer);
+        $email_is_unique = has_unique_email($customer['email']);
 
-        if($result === true) {
-            $new_id = mysqli_insert_id($db);
-            redirect_to(url_for('/customer/upload.php?id=' . h(u($new_id))));
-        } else  {
-            $result = $errors;
-        }
+        if(!$email_is_unique)   {
+            $errors[] = "This email is already registered!";
+        } else {
+
+                 $result = insert_customer($customer);
+
+                if($result === true) {
+                    $new_id = mysqli_insert_id($db);
+                    redirect_to(url_for('/customer/upload.php?id=' . h(u($new_id))));
+                } else  {
+                    $result = $errors;
+            }
+         }
     } else {
         //display a blank form because no form has been submitted
         $customer = [];

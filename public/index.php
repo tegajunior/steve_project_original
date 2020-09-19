@@ -165,14 +165,14 @@
                     </div>
                     <h3 class="contact-side mb-3">An easier way to get to us</h3>
                 </div>
-                <form class="col-md-6">
+                <form class="col-md-6" method="post" action="<?php echo url_for('/admins/contact_admin.php'); ?>">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                         <span class="input-group-text">Email</span>
                         </div>
-                        <input type="text" class="form-control px-3" placeholder="enter your email here!">
+                        <input type="email" class="form-control px-3" placeholder="enter your email here!" name="email">
                     </div>
-                    <textarea rows="10" class="contact-textarea container-fluid p-2">enter your comment here!</textarea>
+                    <textarea rows="10" class="contact-textarea container-fluid p-2" name="content">enter your message here!</textarea>
 
                     <div class="text-right">
                         <button class="contact-submit btn btn-danger mt-2">Send</button>
