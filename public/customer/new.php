@@ -49,8 +49,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dubai | Register</title>
-        <link rel="shortcut icon" href="<?php echo url_for('/images/favicon.png') ?>" type="image/x-icon">
+        <title>United Arab Bank - Register</title>
+        <link rel="shortcut icon" href="<?php echo url_for('/images/favicon1.png') ?>" type="image/x-icon">
 
         <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -77,13 +77,12 @@
             <!-- main form section -->
             <div class="login-wrapper row m-0 no-gutters align-items-center">
                 <!-- left section Slide -->
-                <div class="slide col-md-7 px-3">
+                <aside class="col-md-7 px-3">
                     <h1 class="slideHeader">
-                        Welcome to Abu-Dhabi Finance
+                        Welcome To UAB Corporate Online Banking
                         <hr>
                     </h1>
-                    <p class="">The Financial Institute you can trust</p>
-                </div>
+                </aside>
                 <!-- end of left section Slide -->
 
                 <!-- right section login -->
@@ -101,6 +100,8 @@
                             <?php echo display_errors($errors); ?>
                         </div>
                         <form onsubmit="return registerLoadingSpin()" action="<?php echo url_for('/customer/new.php'); ?>" method="post">
+
+                            <?php echo display_errors($errors); ?>
 
                             <input type="text" name="first_name" placeholder="Firstname*" required autofocus>
                             <input type="text" name="last_name" placeholder="Lastname*" required>
@@ -136,7 +137,7 @@
                             <input type="text" name="phone_number" placeholder="phone number" required>
 
                             <div class="text-center my-2">
-                                <span class="my-spin spinner-border spinner-border-sm text-success"></span>
+                                <span class="my-spin spinner-border spinner-border-lg text-success"></span>
                             </div>
 
                             <button class="btn form-login-btn p-2" id="login-btn" type="submit">Next</button>
