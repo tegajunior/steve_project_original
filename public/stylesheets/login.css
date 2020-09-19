@@ -15,36 +15,32 @@ html {
 }
 
 .login-container{
-    background-image: url("../images/page_assets/slide3.jpeg");
-    background-size: cover;
+    background-image: url("../images/page_assets/login-background.gif");
+    /* background-size: 100%; */
+    background-position: right 0 top -40px;
     background-repeat: no-repeat;
     overflow: auto;
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: 100vh;
+    overflow: auto;
+    /* position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
 }
 
-.login-wrapper{
+/* .login-wrapper{
     background-color: rgba(0, 0, 0, 0.6);
-    height: inherit;
-    overflow: auto;
-}
+} */
 
 /* left section Slide */
 .slideHeader{
     font-size: 40px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-}
-.slide p{
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
+    font-weight: 300;
+    color: rgb(38, 56, 146);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
 }
 
 hr{
@@ -55,28 +51,27 @@ hr{
 /* end of left section Slide */
 
 /* right section login-section */
-.login-section{
+/* .login-section{
     background-color:rgba(0, 0, 0, 0.2);
     height: inherit;
     overflow: auto;
-}
-
-.logo{
-    width: 100px;
-    height: auto;
-}
-.login-form{
-    box-shadow: 0 0 10px #fff;
+} */
+.login-section form{
+    box-shadow: 0 0 5px #000;
     border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
 }
 
 .login-title{
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    color: darkred;
 }
 .login-title2{
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
+    color: darkred;
 }
 
 .login-section form input[type="text"], .login-section form input[type="password"], .login-section form input[type="date"], #gender, #country{
@@ -85,7 +80,7 @@ hr{
     color: #222;
     display: block;
     width: 100%;
-    height: 50px;
+    height: 45px;
     border: 2px solid #999;
     border-radius: 5px;
     padding: 0 10px;
@@ -98,7 +93,7 @@ hr{
 
 #country, #gender{
     background-color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     color: #222;
 }
@@ -106,23 +101,23 @@ hr{
 .login-forget, .login-reg{
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
+    color: #000;
 }
-.login-anchor, .login-anchor:hover{
+.login-forget a, .login-forget a:hover, .login-reg a, .login-reg a:hover{
     text-decoration: none;
-    color: rgb(214, 0, 0);
+    color: darkred;
 }
 
 .form-login-btn{
     font-family: 'Roboto', sans-serif;
     display: block;
-    width: 50%;
+    width: 100%;
     margin: 50px auto 20px auto;
     border: none;
     border-radius: 50px;
-    color: #333;
+    color: #000;
     font-size: 20px;
-    background-color: #fff;
+    background-color: rgb(218, 239, 253)
 }
 .form-login-btn:hover{
     color: #000;
@@ -153,7 +148,7 @@ hr{
 .errors{
     /* display: inline-block; */
     border: 2px solid red;
-    color: #fff;
+    color: #000;
     padding: 1em;
     margin-bottom: 1em;
 }
@@ -165,8 +160,58 @@ hr{
 
 /* end of right section loginDiv */
 
+
+
+
+/* media query section ======================================================================================================================= */
+
 @media only screen and (max-width:767px){
-    .slide{
+
+    .login-container{
+        background-position: right 0 top -10px;
+    }
+    aside{
         display: none;
+    }
+    /* end of left section aside */
+    
+    /* right section login-section */
+    .login-section form{
+        box-shadow: 0 0 5px #000;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #fff;
+    }
+    
+    .login-title{
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .login-title2{
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .login-section form input[type="text"], .login-section form input[type="password"], .login-section form input[type="date"], #gender, #country{
+        font-size: 16px;
+    }
+    #country, #gender{
+        font-size: 16px;
+    }
+    
+    .login-forget, .login-reg{
+        font-size: 16px;
+    }
+
+    .form-login-btn{
+        font-size: 18px;
+    }
+    .upload-label{
+        font-size: 16px;
+    }
+    #output{
+        width: 200px;
+        box-shadow: 0 0 10px #fff;
+        padding: 2px;
     }
 }

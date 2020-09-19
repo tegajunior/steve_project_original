@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dubai</title>
-    <link rel="shortcut icon" href="<?php echo url_for('/images/favicon.png') ?>" type="image/x-icon">
+    <title>United Arab Bank</title>
+    <link rel="shortcut icon" href="<?php echo url_for('/images/favicon1.png') ?>" type="image/x-icon">
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -33,33 +33,40 @@
          <div id="demo" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="0" class="active bg-dark"></li>
+                <li data-target="#demo" data-slide-to="1" class="bg-dark"></li>
+                <li data-target="#demo" data-slide-to="2" class="bg-dark"></li>
+                <li data-target="#demo" data-slide-to="3" class="bg-dark"></li>
             </ul>
 
             <!-- The slideshow -->
             <div class="carousel-inner" id="goto-home">
-            <div class="carousel-item active">
-                <img src="https://media.istockphoto.com/photos/businessman-keeping-the-united-arab-emirates-banknote-money-in-his-picture-id947648864?k=6&m=947648864&s=612x612&w=0&h=DpojOtg4rK9hCPC14NJ_9sL3F5Q2nnuRM1kwbp7hWJ8=" class="img-fluid" alt="Dubai Currency">
-                <div class="carousel-caption">
-                    <h3>Abu-dhabi Dubai</h3>
-                    <p>Experiencing good business</p>
+                <div class="carousel-item active">
+                    <img src="<?php echo url_for('/images/homepage_assets/download.jpg'); ?>" class="img-fluid" alt="Dubai Currency">
+                    <div class="carousel-caption">
+                        <!-- <h3>Abu-dhabi Dubai</h3> -->
+                        <p>Experiencing good business</p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="<?php echo url_for('/images/homepage_assets/slide2.jpg'); ?>" class="img-fluid" alt="Dubai Currency">
-                <div class="carousel-caption">
-                    <h3>Dubai</h3>
-                    <p>Investing in the future</p>
+                <div class="carousel-item">
+                    <img src="<?php echo url_for('/images/homepage_assets/slide.jpg'); ?>" class="img-fluid" alt="Dubai Currency">
+                    <div class="carousel-caption">
+                        <!-- <h3>Dubai</h3> -->
+                        <p>Investing in the future</p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="<?php echo url_for('/images/homepage_assets/slide3.jpeg'); ?>" class="img-fluid" alt="Business Talk">
-                <div class="carousel-caption">
-                    <p>No limit to your cash</p>
+                <div class="carousel-item">
+                    <img src="<?php echo url_for('/images/homepage_assets/slide-c.jpeg'); ?>" class="img-fluid" alt="Business Talk">
+                    <div class="carousel-caption">
+                        <p>No limit to your cash</p>
+                    </div>
                 </div>
-            </div>
+                <div class="carousel-item">
+                    <img src="<?php echo url_for('/images/homepage_assets/slide-d.png'); ?>" class="img-fluid" alt="Business Talk">
+                    <div class="carousel-caption">
+                        <p>No limit to your cash</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Left and right controls -->

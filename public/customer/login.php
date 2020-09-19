@@ -36,8 +36,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dubai | Login</title>
-        <link rel="shortcut icon" href="<?php echo url_for('/images/favicon.png') ?>" type="image/x-icon">
+        <title>United Arab Bank - Login</title>
+        <link rel="shortcut icon" href="<?php echo url_for('/images/favicon1.png') ?>" type="image/x-icon">
 
         <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -62,30 +62,27 @@
             <!-- END nav bar section -->
 
             <!-- main form section -->
-            <div class="login-wrapper row m-0 no-gutters align-items-center">
+            <div class="login-wrapper row m-0 no-gutters p-0">
                 <!-- left section Slide -->
-                <div class="slide col-md-7 px-3">
+                <aside class="col-md-7 px-3 pt-5 mt-5">
                     <h1 class="slideHeader">
-                        Welcome to Abu-Dhabi Finance
+                    Welcome To UAB Corporate Online Banking
                         <hr>
                     </h1>
-                    <p class="">The Financial Institute you can trust</p>
-                </div>
+                </aside>
                 <!-- end of left section Slide -->
 
                 <!-- right section login -->
                 <div class="login-section col-md-5 m-0 p-5">
-                    <div class="text-center pb-4">
-                        <img class="logo" src="<?php echo url_for('/images/logo.png'); ?>" alt="Logo">
-                    </div>
 
                     <!-- login starts here! -->
-                    <div class="login-form p-3">
+                    <!-- <div class="login-form p-3"> -->
                         <div class="TitleCon">
-                            <h3 class="login-title text-center text-white">Welcome!</h3>
-                            <?php echo display_errors($errors); ?>
+                            <h3 class="login-title text-center">Welcome!</h3>
+                            <?php //echo display_errors($errors); ?>
                         </div>
                         <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/login.php'); ?>" method="post">
+                            <?php echo display_errors($errors); ?>
                             <input type="text" name="email" placeholder="Email" autocomplete="" autofocus required>
 
                             <div class="position-relative">
@@ -93,16 +90,16 @@
                                 <input type="password" class="password" name="password" placeholder="Password" autocomplete="off" required>
                             </div>
                             
-                            <p class="login-forget text-right">Forgot <a href="<?php echo url_for('/index.php/#contact') ?>" class="login-anchor">Email</a> or <a href="<?php echo url_for('/index.php/#contact') ?>" class="login-anchor">Password?</a></p>
+                            <p class="login-forget text-right">Forgot <a href="<?php echo url_for('/index.php/#contact') ?>" class="login-anchor">Password</a></p>
 
                             <button class="btn form-login-btn p-2" id="login-btn" type="submit">Login</button>
                             <div class="text-center my-2">
-                                <span class="my-spin spinner-border spinner-border-sm text-success"></span>
+                                <span class="my-spin spinner-border spinner-border-lg text-success"></span>
                             </div>
 
                             <p class="login-reg text-center">Yet to Register? <a href="<?php echo url_for('/customer/new.php'); ?>" class="login-anchor">Sign Up</a></p>
                         </form>
-                    </div>
+                    <!-- </div> -->
                     <!-- login ends here! -->
                 </div>
                 <!-- end of right section login -->

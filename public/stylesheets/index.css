@@ -35,7 +35,7 @@ html {
 }
 
 .carousel-caption h3, .carousel-caption p{
-  text-shadow: 0 0 10px #000;
+  text-shadow: 0 0 5px #000;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
