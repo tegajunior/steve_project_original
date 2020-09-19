@@ -12,52 +12,69 @@
 .navbar{
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.8);
   }
-  .navbar-brand img{
-    width: 100px;
-    height: 50px;
+  .blue-background{
+    background-image: url("../images/blue-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
+  /* .navbar-brand img{
+    width: 100%;
+    height: auto;
+  } */
   .my-nav-link{
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .2em;
+    font-size: 14px;
     padding: 20px 0;
     transition: .3s color, .3s background;
   }
   .active{
-    color: #000;
-    background-color: #fff;
+    color: rgb(38, 56, 146);
   }
   
   .my-nav-link:hover{
-    color: #000;
-    background-color: #fff;
+    color: rgb(38, 56, 146);
   }
   
   .nav-link-right{
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgb(38, 56, 146);
     padding: 20px 0;
     transition: .3s color;
   }
   .nav-link-right:hover{
     color: #000;
+    background-color: #fff;
   }
   
   .toggle-icon{
-    color:#fff;
+    color:#000;
     font-size:20px;
   }
   /* END of navigation style */
+
+  /* footer Style */
+  footer{
+    background-image: url("../images/blue-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .footer-list li, .footer-para{
+    font-size: 14px;
+  }
   
   @media (max-width:1200px) {
     /* navigation style */
     .my-nav-link{
-      font-size: 15px;
+      font-size: 14px;
       padding: 5px;
     }
     .nav-link-right{
+      color: rgb(38, 56, 146);
       font-size: 14px;
       padding: 10px;
       background-color: transparent;
@@ -69,14 +86,17 @@
 
     /* footer */
     .footer-list li, .footer-para{
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 
   @media (max-width:576px) {
+    .navbar-brand {
+    max-width: 150px;
+    width: 50vw;
+    height: auto;
+  }
     .footer-list li, .footer-para{
-      font-size: 12px;
       width: 100%;
     }
-  
-  }
+}

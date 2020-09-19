@@ -1,5 +1,5 @@
 
-<footer class="px-5 py-2 m-0 d-block d-sm-flex flex-wrap justify-content-between bg-dark align-items-center text-center text-sm-left">
+<footer class="px-5 py-2 m-0 d-block d-sm-flex flex-wrap justify-content-between align-items-center text-center text-sm-left">
     <ul class="footer-list d-flex list-unstyled m-0">
         <li class="footer-item mr-3">
             <a href="<?php echo url_for('/index.php/#goto-home'); ?>" class="footer-link text-white">Home</a>

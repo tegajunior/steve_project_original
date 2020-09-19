@@ -23,39 +23,149 @@
         <!-- my css file -->
         <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard_index.css'); ?>">
     </head>
-    <body>
-        <div class="container-fluid p-0">
+    <body onresize="widthSize()">
+        <div class="overall-wrapper container-fluid p-0">
         
-            <!-- <div class="row no-gutters"> -->
-                <aside class="d-none d-md-block p-1" id="aside">
-                    <a href="#home" class="py-3 px-1 my-3 mt-5 active">
-                        <i class="fas fa-tachometer-alt"></i> Dashboard
-                    </a>
-                    <a href="#services" class="py-3 px-1 my-3"><i class="far fa-money-bill-alt"></i> Withdraw
-                    </a>
-                    <a href="#clients" class="py-3 px-1 my-3"><i class="fa fa-fw fa-wrench"></i> Edit Profile</a>
-                    <a href="#contact" class="py-3 px-1 my-3 mt-5"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </aside>
+            <aside class="p-1" id="aside">
+                <a href="<?php echo url_for('/customer/index.php'); ?>" class="py-3 px-1 my-3 mt-5 active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="<?php echo url_for('/customer/withdraw.php'); ?>" class="py-3 px-1 my-3"><i class="far fa-money-bill-alt"></i> Withdraw
+                </a>
+                <a href="<?php echo url_for('/customer/edit.php'); ?>" class="py-3 px-1 my-3"><i class="fa fa-fw fa-wrench"></i> Edit Profile</a>
+                <a href="#contact" class="py-3 px-1 my-3 mt-5"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </aside>
 
-                <main class="">
-                    <div class="top-head d-flex justify-content-between align-items-center position-sticky sticky-top p-3">
-                        <h1 class="d-none d-md-flex">Welcome User</h1>
-                        <div class="">
-                            <img class="img-fluid user-image rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide3.jpg'); ?>" alt="user-image">
+            <main class="position-relation">
+                <div class="top-head d-flex justify-content-between align-items-center position-sticky sticky-top p-3">
+                    <h1 class="d-none d-sm-flex">Welcome User</h1>
+                    <div class="">
+                        <img class="img-fluid user-image rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide3.jpg'); ?>" alt="user-image">
+                    </div>
+                    <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
+                            <i class="fas fa-bars toggle-icon"></i>
+                    </button>
+                </div>
+                <div class="jumbotron user-detail m-0">
+                    <div class="current-banlance text-center pb-5">
+                        <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em>1000</em></strong></h3>
+                    </div>
+
+                    <div class="user-menu row no-gutters justify-content-around">
+
+                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#user-profile">
+                            <i class="fas fa-user-circle fa-5x mx-auto my-3 card-image-top"></i>
+                            <div class="card-body">
+                                <h3 class="card-title text-center">View Profile</h3>
+                                <!-- <button class="btn m-auto d-block">View Profile</button> -->
+                            </div>
                         </div>
-                        <button class="btn btn-lg d-flex d-md-none" type="button">
-                                <i class="fas fa-bars toggle-icon"></i>
-                        </button>
+                    
+                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#contact-us">
+                            <i class="fas fa-id-card-alt fa-5x mx-auto my-3 card-image-top"></i>
+                            <div class="card-body">
+                                <h3 class="card-title text-center">Contact Us</h3>
+                                <!-- <button class="btn m-auto d-block">Contact Us</button> -->
+                            </div>
+                        </div>
+                        
+                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#user-account-number">
+                            <i class="fas fa-money-bill-alt fa-5x mx-auto my-3 card-image-top"></i>
+                            <div class="card-body">
+                                <h3 class="card-title text-center">View Account Number</h3>
+                                <!-- <button class="btn m-auto d-block">View Account Number</button> -->
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="container">
-                        <p>This side navigation is of full height (100%) and always shown.</p>
-                        <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-                        <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                </div>
+
+                <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">copyright &copy; ABF</p>
+            </main>
+            <!-- end of main section -->
+
+            <!-- The Modal for User Profile -->
+            <div class="modal" id="user-profile">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">User Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                </main>
-            <!-- </div> -->
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END of The Modal for User Profile -->
+
+            <!-- The Modal for Contact Us -->
+            <div class="modal" id="contact-us">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Our Contact</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END of The Modal for Contact Us -->
+
+            <!-- The Modal for User Account Number -->
+            <div class="modal" id="user-account-number">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">User Account Number</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END of The Modal for User Account Number -->
             
         </div>
+        <!-- end of overall container -->
+
+        <script src="<?php echo url_for('/jsScripts/customer_nav.js') ?>"></script>
     </body>
 </html>
 
