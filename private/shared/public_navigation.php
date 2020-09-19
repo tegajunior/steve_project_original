@@ -1,7 +1,7 @@
 
 <nav class="position-sticky sticky-top">
     <div class="blue-background container-fluid p-0 text-white">
-        <marquee style="font-weight: 600" direction="rtl">Welcome to United Arab...</marquee>
+        <marquee style="font-weight: 600" direction="rtl">Welcome to United Arab Bank...</marquee>
     </div>
     <div class="navbar navbar-expand-md bg-white px-3 py-0">
         <!-- Brand -->

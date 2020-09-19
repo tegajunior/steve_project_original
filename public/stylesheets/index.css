@@ -106,6 +106,10 @@ html {
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
   color: rgb(67, 166, 228);
+  text-transform: uppercase;
+}
+.about-description{
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
 }
 .about-section p {
   font-family: 'Montserrat', sans-serif;
@@ -118,10 +122,68 @@ html {
 }
 /* END of about us section */
 
+/* features section */
+.features-main{
+  overflow-x: scroll;
+}
+
+.features-aside h2{
+  color: rgb(38, 56, 146);
+  font-size: 28px;
+}
+
+.features-aside p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #666;
+  letter-spacing: .2em;
+}
+.features-main-content{
+  overflow: hidden;
+  min-width: 250px;
+  height: 300px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+}
+.features-main-img{
+  width: 100%;
+  height: 100%;
+}
+.features-main-content:hover .features-main-hidden{
+  top: 0;
+}
+.features-main-hidden{
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgb(67, 166, 228);
+  height: 100%;
+  overflow: auto;
+  transition: .3s top;
+  color: #fff;
+}
+.features-main-hidden h3{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.features-main-hidden p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+/* END of features section */
+
 /* contact us section */
+.contact{
+  background-color: #eee;
+}
 .contact form input, .contact form button, .contact form span{
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
+  border: 1px solid #bbb;
+}
+.contact form input::placeholder{
+  color: #999;
 }
 .contact-side{
   font-family: 'Roboto', sans-serif;
@@ -131,6 +193,8 @@ html {
   outline: none;
   resize: none;
   font-family: 'Roboto', sans-serif;
+  border: 1px solid #bbb;
+  color: #999;
 }
 
 /* END of contact us section */
@@ -277,7 +341,31 @@ html {
 
 }
 
+@media (max-width:768px){
+  /* about us section */
+  .about-section img {
+    width: 50%;
+  }
 
+
+  /* feature section */
+  .features-main-content{
+    min-width: 150px;
+    height: 200px;
+  }
+  .features-main-img{
+    width: 100%;
+    height: 100%;
+  }
+  .features-aside h2{
+    font-size: 20px;
+  }
+  
+  .features-aside p{
+    font-size: 16px;
+    letter-spacing: .1em;
+  }
+}
 @media (max-width:576px) {
 
   /* slide show section */
