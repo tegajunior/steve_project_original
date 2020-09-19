@@ -76,30 +76,27 @@
                 <div class="login-section col-md-5 m-0 p-5">
 
                     <!-- login starts here! -->
-                    <!-- <div class="login-form p-3"> -->
-                        <div class="TitleCon">
-                            <h3 class="login-title text-center">Welcome!</h3>
-                            <?php //echo display_errors($errors); ?>
+                    <div class="TitleCon">
+                        <h3 class="login-title text-center">Welcome!</h3>
+                    </div>
+                    <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/login.php'); ?>" method="post">
+                        <?php echo display_errors($errors); ?>
+                        <input type="text" name="email" placeholder="Email" autocomplete="" autofocus required>
+
+                        <div class="position-relative">
+                            <i class="fas fa-eye-slash position-absolute show-password"></i>
+                            <input type="password" class="password" name="password" placeholder="Password" autocomplete="off" required>
                         </div>
-                        <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/login.php'); ?>" method="post">
-                            <?php echo display_errors($errors); ?>
-                            <input type="text" name="email" placeholder="Email" autocomplete="" autofocus required>
+                        
+                        <p class="login-forget text-right">Forgot <a href="<?php echo url_for('/customer/password_recovery.php'); ?>" target="_blank" class="login-anchor">Password</a></p>
 
-                            <div class="position-relative">
-                                <i class="fas fa-eye-slash position-absolute show-password"></i>
-                                <input type="password" class="password" name="password" placeholder="Password" autocomplete="off" required>
-                            </div>
-                            
-                            <p class="login-forget text-right">Forgot <a href="<?php echo url_for('/index.php/#contact') ?>" class="login-anchor">Password</a></p>
+                        <button class="btn form-login-btn p-2" id="login-btn" type="submit">Login</button>
+                        <div class="text-center my-2">
+                            <span class="my-spin spinner-border spinner-border-lg text-success"></span>
+                        </div>
 
-                            <button class="btn form-login-btn p-2" id="login-btn" type="submit">Login</button>
-                            <div class="text-center my-2">
-                                <span class="my-spin spinner-border spinner-border-lg text-success"></span>
-                            </div>
-
-                            <p class="login-reg text-center">Yet to Register? <a href="<?php echo url_for('/customer/new.php'); ?>" class="login-anchor">Sign Up</a></p>
-                        </form>
-                    <!-- </div> -->
+                        <p class="login-reg text-center">Yet to Register? <a href="<?php echo url_for('/customer/new.php'); ?>" class="login-anchor">Sign Up</a></p>
+                    </form>
                     <!-- login ends here! -->
                 </div>
                 <!-- end of right section login -->

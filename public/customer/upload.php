@@ -64,46 +64,42 @@
             <!-- main form section -->
             <div class="login-wrapper row m-0 no-gutters align-items-center">
                 <!-- left section Slide -->
-                <div class="slide col-md-7 px-3">
+                <div class="slide col-md-7 px-3 pt-5 mt-5">
                     <h1 class="slideHeader">
-                        Welcome to Abu-Dhabi Finance
+                        Welcome To UAB Corporate Online Banking
                         <hr>
                     </h1>
-                    <p class="">The Financial Institute you can trust</p>
                 </div>
                 <!-- end of left section Slide -->
 
                 <!-- right section login -->
                 <div class="login-section col-md-5 m-0 p-5">
-                    <div class="text-center pb-4">
-                        <img class="logo" src="<?php echo url_for('/images/logo.png'); ?>" alt="Logo">
-                    </div>
 
                     <!-- login starts here! -->
-                    <div class="login-form p-3">
-                        <div class="TitleCon">
-                            <h3 class="login-title text-center text-white">Welcome!</h3>
-                            <?php echo display_errors($errors); ?>
-                        </div>
-                        <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/upload.php?id=' . h(u($id))); 
-                        ?>" method="post" enctype="multipart/form-data">
-                            <div class="bg-white">
-                                <input class="container-fluid p-0" type="file" name="my_file" accept="image/*" id="file">
-                            </div>
-
-                            <label class="upload-label" for="file">Upload Image</label>
-
-                            <div class="image-container text-center">
-                                <img id="output" class="rounded" />
-                            </div>
-
-                            <button class="btn form-login-btn p-2" id="login-btn" type="submit">Login</button>
-                            <div class="text-center my-2">
-                                <span class="my-spin spinner-border spinner-border-sm text-success"></span>
-                            </div>
-
-                        </form>
+                    <div class="TitleCon">
+                        <h3 class="login-title text-center">Welcome!</h3>
                     </div>
+                    <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/upload.php?id=' . h(u($id))); 
+                    ?>" method="post" enctype="multipart/form-data">
+
+                        <?php echo display_errors($errors); ?>
+
+                        <div class="bg-white">
+                            <input class="container-fluid p-0" type="file" name="my_file" accept="image/*" id="file" required>
+                        </div>
+
+                        <label class="upload-label" for="file">Upload Image</label>
+
+                        <div class="image-container text-center">
+                            <img id="output" class="rounded-circle" />
+                        </div>
+
+                        <button class="btn form-login-btn p-2" id="login-btn" type="submit">Upload</button>
+                        <div class="text-center my-2">
+                            <span class="my-spin spinner-border spinner-border-sm text-success"></span>
+                        </div>
+
+                    </form>
                     <!-- login ends here! -->
                 </div>
                 <!-- end of right section login -->

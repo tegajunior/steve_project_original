@@ -36,7 +36,6 @@ html {
 /* left section Slide */
 .slideHeader{
     font-size: 40px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: rgb(38, 56, 146);
     font-family: 'Montserrat', sans-serif;
@@ -64,12 +63,7 @@ hr{
 }
 
 .login-title{
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    color: darkred;
-}
-.login-title2{
-    font-size: 18px;
+    font-size: 24px;
     font-family: 'Roboto', sans-serif;
     color: darkred;
 }
@@ -109,15 +103,14 @@ hr{
 }
 
 .form-login-btn{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display: block;
     width: 100%;
     margin: 50px auto 20px auto;
     border: none;
-    border-radius: 50px;
-    color: #000;
+    color: #fff;
     font-size: 20px;
-    background-color: rgb(218, 239, 253)
+    background-color: #0f94c1
 }
 .form-login-btn:hover{
     color: #000;
@@ -140,8 +133,9 @@ hr{
     color: white;
 }
 #output{
-    width: 200px;
-    box-shadow: 0 0 10px #fff;
+    width: 150px;
+    max-height: 150px;
+    /* box-shadow: 0 0 1px #000; */
     padding: 2px;
 }
 
@@ -187,10 +181,6 @@ hr{
         font-size: 20px;
         font-family: 'Roboto', sans-serif;
     }
-    .login-title2{
-        font-size: 18px;
-        font-family: 'Roboto', sans-serif;
-    }
     
     .login-section form input[type="text"], .login-section form input[type="password"], .login-section form input[type="date"], #gender, #country{
         font-size: 16px;
@@ -208,10 +198,5 @@ hr{
     }
     .upload-label{
         font-size: 16px;
-    }
-    #output{
-        width: 200px;
-        box-shadow: 0 0 10px #fff;
-        padding: 2px;
     }
 }

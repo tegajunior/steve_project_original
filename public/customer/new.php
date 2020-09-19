@@ -82,9 +82,9 @@
             <!-- END nav bar section -->
 
             <!-- main form section -->
-            <div class="login-wrapper row m-0 no-gutters align-items-center">
+            <div class="login-wrapper row m-0 no-gutters">
                 <!-- left section Slide -->
-                <aside class="col-md-7 px-3">
+                <aside class="col-md-7 px-3 pt-5 mt-5">
                     <h1 class="slideHeader">
                         Welcome To UAB Corporate Online Banking
                         <hr>
@@ -95,61 +95,53 @@
                 <!-- right section login -->
                 <div class="login-section col-md-5 m-0 p-5">
 
-                    <div class="text-center pb-4">
-                        <img class="logo" src="<?php echo url_for('/images/logo.png'); ?>" alt="Logo">
-                    </div>
-
                     <!-- login starts here! -->
-                    <div class="login-form p-3">
-                        <div class="TitleCon">
-                            <p class="login-title text-center text-white">Welcome to Your One Customer Bank!</p>
-                            <p class="login-title2 text-center text-white">Let's setup your account real quick!</p>
-                            <?php echo display_errors($errors); ?>
-                        </div>
-                        <form onsubmit="return registerLoadingSpin()" action="<?php echo url_for('/customer/new.php'); ?>" method="post">
-
-                            <?php echo display_errors($errors); ?>
-
-                            <input type="text" name="first_name" placeholder="Firstname*" required autofocus>
-                            <input type="text" name="last_name" placeholder="Lastname*" required>
-
-                            <select name="gender" id="gender">
-                                <option value="default">Gender</option>
-                                <option value="male">Male</option>
-                                <option value="male">Female</option>
-                            </select> 
-
-                            <input type="text" name="email" placeholder="Email" autocomplete="" required>
-
-                            <div class="position-relative">
-                                <i class="show-password fas fa-eye-slash position-absolute"></i>
-                                <input type="password" class="password" id="password-one" name="password" placeholder="Password" autocomplete="off" required>
-                            </div>
-
-                            <div class="position-relative">
-                                <i class="show-password fas fa-eye-slash position-absolute"></i>
-                                <input type="password" class="password" id="password-two" name="confirm_password" placeholder="confirm Password" autocomplete="off" required>
-                            </div>
-                            
-                            <input type="date" name="date" placeholder="Date of Birth*" required>
-
-                            <input type="text" name="occupation" placeholder="Occupation" required>
-
-                            <select name="country" id="country">
-                                <option value="default">select-Country</option>
-                            </select>
-
-                            <input type="text" name="address" placeholder="address" required>
-
-                            <input type="text" name="phone_number" placeholder="phone number" required>
-
-                            <div class="text-center my-2">
-                                <span class="my-spin spinner-border spinner-border-lg text-success"></span>
-                            </div>
-
-                            <button class="btn form-login-btn p-2" id="login-btn" type="submit">Next</button>
-                        </form>
+                    <div class="TitleCon">
+                        <p class="login-title text-center">Let's setup your account real quick!</p>
                     </div>
+                    <form onsubmit="return registerLoadingSpin()" action="<?php echo url_for('/customer/new.php'); ?>" method="post">
+
+                        <?php echo display_errors($errors); ?>
+
+                        <input type="text" name="first_name" placeholder="Firstname*" required autofocus>
+                        <input type="text" name="last_name" placeholder="Lastname*" required>
+
+                        <select name="gender" id="gender">
+                            <option value="default">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="male">Female</option>
+                        </select> 
+
+                        <input type="text" name="email" placeholder="Email" autocomplete="" required>
+
+                        <div class="position-relative">
+                            <i class="show-password fas fa-eye-slash position-absolute"></i>
+                            <input type="password" class="password" id="password-one" name="password" placeholder="Password" autocomplete="off" required>
+                        </div>
+
+                        <div class="position-relative">
+                            <i class="show-password fas fa-eye-slash position-absolute"></i>
+                            <input type="password" class="password" id="password-two" name="confirm_password" placeholder="confirm Password" autocomplete="off" required>
+                        </div>
+                        
+                        <input type="date" name="date" placeholder="Date of Birth*" required>
+
+                        <input type="text" name="occupation" placeholder="Occupation" required>
+
+                        <select name="country" id="country">
+                            <option value="default">select-Country</option>
+                        </select>
+
+                        <input type="text" name="address" placeholder="address" required>
+
+                        <input type="text" name="phone_number" placeholder="phone number" required>
+
+                        <div class="text-center my-2">
+                            <span class="my-spin spinner-border spinner-border-lg text-success"></span>
+                        </div>
+
+                        <button class="btn form-login-btn p-2" id="login-btn" type="submit">Register</button>
+                    </form>
                     <!-- login ends here! -->
                 </div>
                 <!-- end of right section login -->

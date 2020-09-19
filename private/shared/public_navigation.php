@@ -1,6 +1,8 @@
 
 <nav class="position-sticky sticky-top">
-    <div class="blue-background container-fluid p-3"></div>
+    <div class="blue-background container-fluid p-0 text-white">
+        <marquee style="font-weight: 600" direction="rtl">Welcome to United Arab...</marquee>
+    </div>
     <div class="navbar navbar-expand-md bg-white px-3 py-0">
         <!-- Brand -->
         <a href="#goto-home">
