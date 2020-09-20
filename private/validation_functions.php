@@ -128,7 +128,7 @@
     $customer_count = mysqli_num_rows($result);
     mysqli_free_result($result);
 
-    return $admin_count === 0;
+    return $customer_count === 0;
   }
 
 ?>

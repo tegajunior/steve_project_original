@@ -53,12 +53,13 @@ nav ul li {
 }
 
 footer {
+  text-align: center;
   width: 940px;
-  height: 20px;
-  margin: 0 0 10px 0;
+  height: 50px;
+  margin: 0 auto;
   padding: 10px 20px;
-  background: #0055DD;
-  color: white;
+  background: #0055DD; 
+  color: #fff;
 }
 
 /* Actions */

@@ -1,7 +1,7 @@
 <?php
 require_once('../../private/initialize.php');
 require_admin_login();
-$errors = []
+$errors = [];
 if(is_post_request()) {
     $new_password = $_POST['new_password'];
     $confirm_password = $_POST['confirm_password'];
@@ -11,7 +11,7 @@ if(is_post_request()) {
 
         if($result) {
             $_SESSION['message'] = 'Password updated.';
-            redirect_to(url_for('/admins/index.php'))
+            redirect_to(url_for('/admins/index.php'));
 
         }
     } else {

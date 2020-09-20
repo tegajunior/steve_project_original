@@ -124,7 +124,7 @@
                             <input type="password" class="password" id="password-two" name="confirm_password" placeholder="confirm Password" autocomplete="off" required>
                         </div>
                         
-                        <input type="date" name="date" placeholder="Date of Birth*" required>
+                        <input type="date" name="date_of_birth" placeholder="Date of Birth*" required>
 
                         <input type="text" name="occupation" placeholder="Occupation" required>
 

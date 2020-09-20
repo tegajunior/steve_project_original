@@ -1,12 +1,11 @@
 <?php 
     require_once('../../private/initialize.php');
 
-    if(!isset($_GET['id'])) {
-        //redirect_to(url_for('/customer/new.php'));
+    if(!isset($_GET['by'])) {
+        redirect_to(url_for('/customer/new.php'));
     } else {
-        //$id = $_GET['id'];
-    } 
-    //$customer = find_customer_by_id($id);   
+        //do nothing, will show successful page
+    }    
 ?>
 
 <!DOCTYPE html>
