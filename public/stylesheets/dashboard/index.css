@@ -1,0 +1,34 @@
+
+.user-space .card {
+  box-shadow: 0 0 5px #000;
+  transition: .3s transform;
+}
+.user-space .card:hover {
+  box-shadow: 0 0 8px #000;
+  transform: scale(1.1);
+}
+.user-space .card button {
+  background-color: #eee;
+  color: #333;
+  border: 1px solid #444;
+  outline: none;
+}
+.user-space .card h3{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+}
+
+@media (max-width:768px){
+  .user-space {
+    flex-wrap: wrap;
+  }
+  .user-space .card h3{
+    font-size: 18px;
+  }
+}
+
+@media (max-width:576px){
+  .user-space .card h3{
+    font-size: 18px;
+  }
+}

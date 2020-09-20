@@ -37,7 +37,6 @@ let showPassword = () => {
             input.type = "password"
         }
     })
-    console.log("working")
 }
 
 document.querySelectorAll(".show-password").forEach( inputPassword => {

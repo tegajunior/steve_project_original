@@ -1,0 +1,34 @@
+
+
+.withdraw {
+    background-color: #fff;
+    width: 100%;
+    z-index: 1;
+}
+
+.withdraw input, .withdraw select, .withdraw .password{
+    flex-basis: 46%;
+}
+.withdraw-btn{
+    flex-basis: 99%;
+}
+.withdraw select optgroup{
+    max-height: 50px;
+}
+.show-password{
+    color: #000;
+    right: 2%;
+    top: 50%;
+    transform: translate(-2%, -50%);
+}
+
+.spinner-border{
+    display: none;
+    margin: auto;
+}
+
+@media (max-width:786px){
+    .withdraw input, .withdraw select, .withdraw .password, .withdraw-btn{
+        flex-basis: 100%;
+    }
+}
