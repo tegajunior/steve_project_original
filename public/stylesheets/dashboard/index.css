@@ -18,6 +18,63 @@
   font-size: 24px;
 }
 
+.spinner-border{
+  display: none;
+  margin: auto;
+}
+
+/* style form modal section ------------------------------------------------------------------------------------------------------------ */
+.personal-detail-modal{
+  /* position: absolute;
+  width: 80%;
+  top: 0; */
+}
+form.personal-detail{
+  padding: 20px;
+  box-shadow: 0px 0px 5px #000;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.user-passport{
+  width: 150px;
+  height: 150px;
+  background-color: #999;
+}
+.input-wrapper{
+  flex-basis: 48%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-description{
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+.form-value{
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1em;
+  border: none;
+  background-color: #ccc;
+  color: #000;
+  font-weight: 700;
+}
+.form-value:focus{
+  border: none;
+  outline: none;
+}
+
+@media (max-width:786px){
+  .input-wrapper{
+      flex-basis: 100%;
+  }
+}
+
+
+/* style form modal section ------------------------------------------------------------------------------------------------------------ */
+
+
 @media (max-width:768px){
   .user-space {
     flex-wrap: wrap;

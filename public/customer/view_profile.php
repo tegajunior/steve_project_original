@@ -59,94 +59,75 @@
             <main class="position-relation">
                 <div class="jumbotron user-detail m-0">
                     <div class="current-banlance text-center pb-5">
-                        <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em>1000</em></strong></h3>
+                        <h3 class="current-balance m-0">Profile Details</h3>
                     </div>
 
                     <div class="user-space row no-gutters justify-content-around">
+                        <form action="" class="personal-detail">
+                            <div class="form-input-wrapper row no-gutters justify-content-between">
 
-                        <a href="<?php echo url_for('/customer/view_profile.php'); ?>" class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3">
-                            <i class="fas fa-user-circle fa-5x mx-auto my-3 card-image-top"></i>
-                            <div class="card-body">
-                                <h3 class="card-title text-center">View Profile</h3>
-                                <!-- <button class="btn m-auto d-block">View Profile</button> -->
-                            </div>
-                        </a>
-                    
-                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#contact-us">
-                            <i class="fas fa-id-card-alt fa-5x mx-auto my-3 card-image-top"></i>
-                            <div class="card-body">
-                                <h3 class="card-title text-center">Contact Us</h3>
-                                <!-- <button class="btn m-auto d-block">Contact Us</button> -->
-                            </div>
-                        </div>
-                        
-                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#user-account-number">
-                            <i class="fas fa-money-bill-alt fa-5x mx-auto my-3 card-image-top"></i>
-                            <div class="card-body">
-                                <h3 class="card-title text-center">View Account Number</h3>
-                                <!-- <button class="btn m-auto d-block">View Account Number</button> -->
-                            </div>
-                        </div>
+                                <div class="passport col-12 text-center m-3">
+                                    <img src="<?php echo url_for('/images/page_assets/uab_image_2.jpeg'); ?>" alt="User Passport" class="user-passport rounded-circle">
+                                </div>
 
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Firstname</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Lastname</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Email</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Phone Number</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Date of Birth</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Occupation</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Country</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Address</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Account Number</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Activated</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
                 </div>
 
                 <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">copyright &copy; ABF</p>
             </main>
             <!-- end of main section -->
-
-
-            <!-- The Modal for Contact Us -->
-            <div class="modal" id="contact-us">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Our Contact</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        Modal body..
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- END of The Modal for Contact Us -->
-
-            <!-- The Modal for User Account Number -->
-            <div class="modal" id="user-account-number">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">User Account Number</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        Modal body..
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- END of The Modal for User Account Number -->
             
         </div>
         <!-- end of overall container -->

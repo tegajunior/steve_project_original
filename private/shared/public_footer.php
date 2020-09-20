@@ -11,6 +11,6 @@
             <a href="<?php echo url_for('/index.php/#contact'); ?>" class="footer-link text-white">Contact</a>
       </li>
     </ul>
-    <p class="footer-para text-white m-0">All right reserve &copy; www.acf.com.ab</p>
+    <p class="footer-para text-white m-0">&copy; <?php echo date("Y"); ?> United Arab Bank (UAB)</p>
 </footer>
 

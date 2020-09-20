@@ -207,37 +207,34 @@
          <!-- END of Features section -->
 
          <!-- contact us section -->
-         <div class="contact container-fluid py-3 p-5" id="contact">
-            <div class="header-wrapper my-2">
+
+         <div class="contact row no-gutters align-items-center justify-content-between p-5" id="contact">
+
+            <div class="header-wrapper col-12 my-2">
                 <h1 class="section-header text-center">Contact Us</h1>
                 <hr class="header-rule">
             </div>
-            <div class="row no-gutters align-items-center py-2">
-                <div class="col-md-6 text-center text-md-left">
-                    <div class="my-3">
-                        <i class="fas fa-phone-alt fa-2x"></i>
-                        <span>+223 000 000 000</span>
-                    </div>
-                    <div class="my-3">
-                        <i class="fas fa-mail-bulk fa-2x"></i>
-                        <span>12345@gmail.com.ng</span>
-                    </div>
-                    <h3 class="contact-side mb-3">An easier way to get to us</h3>
-                </div>
-                <form class="col-md-6" method="post" action="<?php echo url_for('/admins/contact_admin.php'); ?>">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text">Email</span>
-                        </div>
-                        <input type="email" class="form-control px-3" placeholder="enter your email here!" name="email">
-                    </div>
-                    <textarea rows="10" class="contact-textarea container-fluid p-2" name="content">enter your message here!</textarea>
 
-                    <div class="text-right">
-                        <button class="contact-submit btn btn-danger mt-2">Send</button>
-                    </div>
-                </form>
+            <div class="features-aside col-md-4 text-center">
+                <h2 class="features-aside-header">An easier way to get to us</h2>
+                <p class="features-aside-para">
+                    <i class="fas fa-mail-bulk fa-5x"></i> <br>
+                    <span>contact@uab.in.net</span>
+                </p>
             </div>
+            <form class="col-md-7" method="post" action="<?php echo url_for('/admins/contact_admin.php'); ?>">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text">Email</span>
+                    </div>
+                    <input type="email" class="form-control px-3" placeholder="enter your email here!" name="email">
+                </div>
+                <textarea rows="10" class="contact-textarea container-fluid p-2" name="content">enter your message here!</textarea>
+
+                <div class="text-right">
+                    <button class="contact-submit btn text-white mt-2">Send</button>
+                </div>
+            </form>
         </div>
          <!-- END of contact us section -->
 
