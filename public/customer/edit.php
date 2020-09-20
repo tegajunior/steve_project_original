@@ -57,12 +57,12 @@
 
         <!-- my css file -->
         <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/top_section.css'); ?>">
-        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/withdraw.css'); ?>">
+        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/index.css'); ?>">
         
     </head>
     <body onresize="widthSize()">
         <div class="overall-wrapper container-fluid p-0">
-        
+
             <!-- Top Header section and aside nav -->
             <div class="header-aside">
                 <div class="top-head d-flex justify-content-between align-items-center p-3 flex-wrap">
@@ -94,29 +94,78 @@
             <main class="position-relation">
                 <div class="jumbotron user-detail m-0">
                     <div class="current-banlance text-center pb-5">
-                        <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em>1000</em></strong></h3>
+                        <h3 class="current-balance m-0">Edit Profile</h3>
                     </div>
 
-                    <!-- user Update Form -->
-                    <form onsubmit="return loadingSpin()" action="" class="withdraw p-3 row no-gutters justify-content-between" method="post" autocomplete="off">
-                        <input type="text" placeholder="Enter Firstname" name="firstname" class="firstname col-md-6 m-2 p-2" required>
-                        <input type="text" placeholder="Enter Lastname" name="lastname" class="lastname col-md-6 m-2 p-2" required>
-                        <select name="country" id="country" class="country col-md-6 m-2 p-2">
-                            <option value="defalut">Select Country</option>
-                        </select>
-                        <input type="text" placeholder="Enter Bank Name" name="bankname" class="bankname col-md-6 m-2 p-2" required>
-                        <input type="text" placeholder="Enter Account" name="bankaccount" class="bankaccount col-md-6 m-2 p-2" required>
-                        <input type="text" placeholder="Enter Switf Code" name="switfcode" class="switfcode col-md-6 m-2 p-2" required>
-                        <input type="text" placeholder="Enter Amount" name="amount" class="amount col-md-6 m-2 p-2" required>
-                        <div class="withdraw-btn col-12 text-center">
-                            <button type="submit" class="place-withdraw btn btn-dark">Update</button>
-                        </div>
-                        <div class="text-center my-2 col-12">
-                            <span class="my-spin spinner-border spinner-border-sm text-success"></span>
-                        </div>
-                    </form>
-                    <!-- END of user Update Form -->
+                    <div class="user-space row no-gutters justify-content-around">
+                        <form onsubmit="return loadingSpin" action="<?php echo url_for('/customer/edit.php') ?>" class="personal-detail" method="post" autocomplete="off">
+                            <div class="form-input-wrapper row no-gutters justify-content-between">
 
+                                <div class="passport col-12 text-center m-3">
+                                    <img src="<?php echo url_for('/images/page_assets/uab_image_2.jpeg'); ?>" alt="User Passport" class="user-passport rounded-circle">
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0" for="firstname">Firstname</label>
+                                    <input type="text" name="first_name" id="firstname" class="form-value container-fluid p-1" placeholder="Enter Firstname">
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0" for="lastname">Lastname</label>
+                                    <input type="text" name="last_name" id="lastname" class="form-value container-fluid p-1" placeholder="Enter Lastname">
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Email</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0" for="phonenumber">Phone Number</label>
+                                    <input type="text" name="phone_number" id="phonenumber" class="form-value container-fluid p-1" placeholder="Enter Phone Number">
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Date of Birth</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0" for="occupation">Occupation</label>
+                                    <input type="text" name="occupation" id="occupation" class="form-value container-fluid p-1" placeholder="Enter Occupation">
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Country</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Address</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Account Number</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="input-wrapper col-lg-6 my-3">
+                                    <label class="form-description container-fluid py-0 px-1 m-0">Activated</label>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                </div>
+
+                                <div class="withdraw-btn col-12 text-right">
+                                    <button id="withdraw" type="submit" class="place-withdraw btn btn-dark">Update</button>
+                                </div>
+
+                                <div class="text-center my-2 col-12">
+                                    <span class="my-spin spinner-border spinner-border-sm text-success"></span>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">copyright &copy; ABF</p>
@@ -127,6 +176,6 @@
         <!-- end of overall container -->
 
         <script src="<?php echo url_for('/jsScripts/customer_nav.js') ?>"></script>
-        <script src="<?php echo url_for('/jsScripts/withdraw.js') ?>"></script>
+        <script src="<?php echo url_for('/jsScripts/edit.js') ?>"></script>
     </body>
 </html>

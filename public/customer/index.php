@@ -74,13 +74,13 @@ $customer = find_customer_by_id($_SESSION['customer_id']);
 
                     <div class="user-space row no-gutters justify-content-around">
 
-                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#user-profile">
+                        <a href="<?php echo url_for('/customer/view_profile.php'); ?>" class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3">
                             <i class="fas fa-user-circle fa-5x mx-auto my-3 card-image-top"></i>
                             <div class="card-body">
                                 <h3 class="card-title text-center">View Profile</h3>
                                 <!-- <button class="btn m-auto d-block">View Profile</button> -->
                             </div>
-                        </div>
+                        </a>
                     
                         <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#contact-us">
                             <i class="fas fa-id-card-alt fa-5x mx-auto my-3 card-image-top"></i>
@@ -107,33 +107,6 @@ $customer = find_customer_by_id($_SESSION['customer_id']);
             </main>
             <!-- end of main section -->
 
-
-            <!-- The Modal for User Profile -->
-            <div class="modal" id="user-profile">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">User Details</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        Modal body..
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- END of The Modal for User Profile -->
 
             <!-- The Modal for Contact Us -->
             <div class="modal" id="contact-us">

@@ -62,14 +62,14 @@
             <!-- END nav bar section -->
 
             <!-- main form section -->
-            <div class="login-wrapper row m-0 no-gutters align-items-center">
+            <div class="login-wrapper row m-0 no-gutters p-0">
                 <!-- left section Slide -->
-                <div class="slide col-md-7 px-3 pt-5 mt-5">
+                <aside class="col-md-7 px-3 pt-5 mt-5">
                     <h1 class="slideHeader">
-                        Welcome To UAB Corporate Online Banking
+                    Welcome To UAB Corporate Online Banking
                         <hr>
                     </h1>
-                </div>
+                </aside>
                 <!-- end of left section Slide -->
 
                 <!-- right section login -->
@@ -77,7 +77,7 @@
 
                     <!-- login starts here! -->
                     <div class="TitleCon">
-                        <h3 class="login-title text-center">Welcome!</h3>
+                        <h3 class="login-title text-center">Continue!</h3>
                     </div>
                     <form onsubmit="loadingSpin()" action="<?php echo url_for('/customer/upload.php?id=' . h(u($id))); 
                     ?>" method="post" enctype="multipart/form-data">

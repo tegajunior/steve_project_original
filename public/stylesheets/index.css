@@ -104,8 +104,8 @@ html {
 /* about us section */
 .section-header{
   font-family: 'Roboto', sans-serif;
-  font-size: 40px;
-  color: rgb(67, 166, 228);
+  color: rgb(38, 56, 146);
+  font-size: 28px;
   text-transform: uppercase;
 }
 .about-description{
@@ -182,6 +182,11 @@ html {
   font-family: 'Roboto', sans-serif;
   border: 1px solid #bbb;
 }
+.contact-submit{
+  background-color: rgb(33, 137, 197);
+  font-weight: 600;
+  letter-spacing: .1em;
+}
 .contact form input::placeholder{
   color: #999;
 }
@@ -247,7 +252,7 @@ html {
 
   /* about us section */
   .section-header{
-    font-size: 32px;
+    font-size: 24px;
   }
   .about-section p {
     font-size: 16px;
