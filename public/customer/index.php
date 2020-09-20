@@ -21,37 +21,48 @@
         <script src="https://kit.fontawesome.com/4ea96ace4f.js" crossorigin="anonymous"></script>
 
         <!-- my css file -->
-        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard_index.css'); ?>">
+        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/top_section.css'); ?>">
+        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/index.css'); ?>">
+        
     </head>
     <body onresize="widthSize()">
         <div class="overall-wrapper container-fluid p-0">
-        
-            <aside class="p-1" id="aside">
-                <a href="<?php echo url_for('/customer/index.php'); ?>" class="py-3 px-1 my-3 mt-5 active">
-                    <i class="fas fa-tachometer-alt"></i> Dashboard
-                </a>
-                <a href="<?php echo url_for('/customer/withdraw.php'); ?>" class="py-3 px-1 my-3"><i class="far fa-money-bill-alt"></i> Withdraw
-                </a>
-                <a href="<?php echo url_for('/customer/edit.php'); ?>" class="py-3 px-1 my-3"><i class="fa fa-fw fa-wrench"></i> Edit Profile</a>
-                <a href="<?php echo url_for('/customer/logout.php'); ?>" class="py-3 px-1 my-3 mt-5"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            </aside>
+
+            <!-- Top Header section and aside nav -->
+            <div class="header-aside">
+                <div class="top-head d-flex justify-content-between align-items-center p-3 flex-wrap">
+                    <h1 class="user-name">Welcome <em><?php echo "user-name" ;?></em></h1>
+                    <div class="d-flex flex-nowrap">
+                        <img class="user-image img-fluid rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide.jpg'); ?>" alt="user-image" style="height: 40px; width:40px">
+
+                        <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
+                            <i class="fas fa-bars toggle-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <aside class="aside px-1" id="aside">
+                    <div id="nav-close" class="nav-close btn btn-lg text-white d-block d-sm-none text-right">
+                        <span class="px-2 bg-dark">&times</span>
+                    </div>
+                    <a href="<?php echo url_for('/customer/index.php'); ?>" class="active py-3 px-1 mb-3">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                    <a href="<?php echo url_for('/customer/withdraw.php'); ?>" class="py-3 px-1 my-3"><i class="far fa-money-bill-alt"></i> Withdraw
+                    </a>
+                    <a href="<?php echo url_for('/customer/edit.php'); ?>" class="py-3 px-1 my-3"><i class="fa fa-fw fa-wrench"></i> Edit Profile</a>
+                    <a href="<?php echo url_for('/customer/logout.php'); ?>" class="py-3 px-1 my-3 mt-5"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </aside>
+            </div>
+            <!-- Top Header section and aside nav -->
 
             <main class="position-relation">
-                <div class="top-head d-flex justify-content-between align-items-center position-sticky sticky-top p-3">
-                    <h1 class="d-none d-sm-flex">Welcome User</h1>
-                    <div class="">
-                        <img class="img-fluid user-image rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide3.jpg'); ?>" alt="user-image">
-                    </div>
-                    <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
-                            <i class="fas fa-bars toggle-icon"></i>
-                    </button>
-                </div>
                 <div class="jumbotron user-detail m-0">
                     <div class="current-banlance text-center pb-5">
                         <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em>1000</em></strong></h3>
                     </div>
 
-                    <div class="user-menu row no-gutters justify-content-around">
+                    <div class="user-space row no-gutters justify-content-around">
 
                         <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#user-profile">
                             <i class="fas fa-user-circle fa-5x mx-auto my-3 card-image-top"></i>
@@ -84,6 +95,7 @@
             </main>
             <!-- end of main section -->
 
+
             <!-- The Modal for User Profile -->
             <div class="modal" id="user-profile">
                 <div class="modal-dialog">
@@ -98,6 +110,7 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         Modal body..
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     </div>
 
                     <!-- Modal footer -->

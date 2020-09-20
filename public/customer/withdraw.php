@@ -21,58 +21,73 @@
         <script src="https://kit.fontawesome.com/4ea96ace4f.js" crossorigin="anonymous"></script>
 
         <!-- my css file -->
-        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard_index.css'); ?>">
-        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/withdraw.css'); ?>">
+        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/top_section.css'); ?>">
+        <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/withdraw.css'); ?>">
+        
     </head>
     <body onresize="widthSize()">
         <div class="overall-wrapper container-fluid p-0">
         
-            <aside class="p-1" id="aside">
-                <a href="<?php echo url_for('/customer/index.php'); ?>" class="py-3 px-1 my-3 mt-5">
-                    <i class="fas fa-tachometer-alt"></i> Dashboard
-                </a>
-                <a href="<?php echo url_for('/customer/withdraw.php'); ?>" class="py-3 px-1 my-3 active"><i class="far fa-money-bill-alt"></i> Withdraw
-                </a>
-                <a href="<?php echo url_for('/customer/edit.php'); ?>" class="py-3 px-1 my-3"><i class="fa fa-fw fa-wrench"></i> Edit Profile</a>
-                <a href="#contact" class="py-3 px-1 my-3 mt-5"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            </aside>
+            <!-- Top Header section and aside nav -->
+            <div class="header-aside">
+                <div class="top-head d-flex justify-content-between align-items-center p-3 flex-wrap">
+                    <h1 class="user-name">Welcome <em><?php echo "user-name" ;?></em></h1>
+                    <div class="d-flex flex-nowrap">
+                        <img class="user-image img-fluid rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide.jpg'); ?>" alt="user-image" style="height: 40px; width:40px">
+
+                        <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
+                            <i class="fas fa-bars toggle-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <aside class="aside px-1" id="aside">
+                    <div id="nav-close" class="nav-close btn btn-lg text-white d-block d-sm-none text-right">
+                        <span class="px-2 bg-dark">&times</span>
+                    </div>
+                    <a href="<?php echo url_for('/customer/index.php'); ?>" class="py-3 px-1 mb-3">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                    <a href="<?php echo url_for('/customer/withdraw.php'); ?>" class="active py-3 px-1 my-3"><i class="far fa-money-bill-alt"></i> Withdraw
+                    </a>
+                    <a href="<?php echo url_for('/customer/edit.php'); ?>" class="py-3 px-1 my-3"><i class="fa fa-fw fa-wrench"></i> Edit Profile</a>
+                    <a href="<?php echo url_for('/customer/logout.php'); ?>" class="py-3 px-1 my-3 mt-5"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </aside>
+            </div>
+            <!-- Top Header section and aside nav -->
 
             <main class="position-relation">
-                <div class="top-head d-flex justify-content-between align-items-center position-sticky sticky-top p-3">
-                    <h1 class="d-none d-sm-flex">Welcome User</h1>
-                    <div class="">
-                        <img class="img-fluid user-image rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide3.jpg'); ?>" alt="user-image">
-                    </div>
-                    <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
-                            <i class="fas fa-bars toggle-icon"></i>
-                    </button>
-                </div>
                 <div class="jumbotron user-detail m-0">
                     <div class="current-banlance text-center pb-5">
-                        <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em>1000</em></strong></h3>
+                        <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em id="current-balance">1000</em></strong></h3>
                     </div>
 
-                    <div class="user-menu row no-gutters justify-content-around">
                     <!-- user withdraw Form -->
-                        <form onsubmit="return loadingSpin()" action="" class="withdraw p-3 row no-gutters justify-content-between" method="post">
-                            <input type="text" placeholder="Enter Firstname" name="firstname" class="firstname col-md-6 m-2 p-2" required>
-                            <input type="text" placeholder="Enter Lastname" name="lastname" class="lastname col-md-6 m-2 p-2" required>
-                            <select name="country" id="country" class="country col-md-6 m-2 p-2">
-                                <option value="defalut">Select Country</option>
-                            </select>
-                            <input type="text" placeholder="Enter Bank Name" name="bankname" class="bankname col-md-6 m-2 p-2" required>
-                            <input type="text" placeholder="Enter Account" name="bankaccount" class="bankaccount col-md-6 m-2 p-2" required>
-                            <input type="text" placeholder="Enter Switf Code" name="switfcode" class="switfcode col-md-6 m-2 p-2" required>
-                            <input type="text" placeholder="Enter Amount" name="amount" class="amount col-md-6 m-2 p-2" required>
-                            <div class="withdraw-btn col-12 text-center">
-                                <button type="submit" class="place-withdraw btn btn-dark">Withdraw</button>
-                            </div>
-                            <div class="text-center my-2 col-12">
-                                <span class="my-spin spinner-border spinner-border-sm text-success"></span>
-                            </div>
-                        </form>
+                    <form onsubmit="return compareWithdrawAmount()" action="<?php echo url_for('/customer/withdraw.php'); ?>" class="withdraw p-3 row no-gutters justify-content-between" method="post" autocomplete="off">
+                        <input type="text" placeholder="Enter Firstname" name="firstname" class="firstname col-md-6 m-2 p-2" required>
+                        <input type="text" placeholder="Enter Lastname" name="lastname" class="lastname col-md-6 m-2 p-2" required>
+                        <select name="country" id="country" class="country col-md-6 m-2 p-2">
+                            <option value="defalut">Select Country</option>
+                        </select>
+                        <input type="text" placeholder="Enter Bank Name" name="bankname" class="bankname col-md-6 m-2 p-2" required>
+                        <input type="text" placeholder="Enter Account" name="bankaccount" class="bankaccount col-md-6 m-2 p-2" required>
+                        <input type="text" placeholder="Enter Switf Code" name="switfcode" class="switfcode col-md-6 m-2 p-2" required>
+
+                        <div class="password position-relative col-md-6 m-2">
+                            <i class="fas fa-eye-slash position-absolute show-password"></i>
+                            <input type="password" class="password container-fluid p-2" name="password" placeholder="Password" required>
+                        </div>
+
+                        <input type="text" placeholder="Enter Amount to Withdraw" name="amount" class="amount col-md-6 m-2 p-2" id="amount" required>
+
+                        <div class="withdraw-btn col-12 text-right">
+                            <button id="withdraw" type="submit" class="place-withdraw btn btn-dark">Withdraw</button>
+                        </div>
+                        <div class="text-center my-2 col-12">
+                            <span class="my-spin spinner-border spinner-border-sm text-success"></span>
+                        </div>
+                    </form>
                     <!-- END of user withdraw Form -->
-                    </div>
 
                 </div>
 
@@ -83,8 +98,8 @@
         </div>
         <!-- end of overall container -->
 
-        <script src="<?php echo url_for('/jsScripts/customer_nav.js') ?>"></script>
-        <script src="<?php echo url_for('/jsScripts/withdraw.js') ?>"></script>
+        <script src="<?php echo url_for('/jsScripts/customer_nav.js'); ?>"></script>
+        <script src="<?php echo url_for('/jsScripts/withdraw.js'); ?>"></script>
     </body>
 </html>
 

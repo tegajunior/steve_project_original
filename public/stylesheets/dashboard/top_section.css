@@ -26,24 +26,39 @@ html {
   overflow: auto;
 }
 
+.header-aside{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.top-head{
+    background-color: #999;
+    margin-left: 200px;
+    overflow-x: auto;
+}
+.top-head h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  letter-spacing: .1em;
+  color: 444;
+}
+.user-image{
+  width: 50px;
+  height: 50px;
+}
+
+/* aside bar */
 aside {
     width: 200px;
     display: block;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     bottom: 0;
     background-color: #999;
-    overflow-x: hidden;
-    padding-top: 16px;
-  }
-  .aside-show {
-    display: block;
-    left: 0;
-    width: 60%;
-    z-index: 2;
-    transition: 5s all;
+    overflow: auto;
+    padding-top: 100px;
   }
   
 aside a {
@@ -51,7 +66,7 @@ aside a {
     font-size: 18px;
     color: #fff;
     display: block;
-    transition: .3s background;
+    transition: .5s background;
   }
   
 aside a:hover {
@@ -63,20 +78,12 @@ aside a:hover {
     background-color: #fff;
     color: #444;
 }
+/* END of aside bar */
+
 main {
   margin-left: 200px;
 }
-main .top-head{
-    background-color: #999;
-    color: 444;
-}
-.top-head h1 {
-  font-family: 'Montserrat', sans-serif;
-}
-main .user-image{
-  width: 50px;
-  height: 50px;
-}
+
 main .user-detail {
   min-height: 100vh;
   background-color: #eee;
@@ -86,6 +93,7 @@ main .user-detail {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
 }
+
 .footer{
   z-index: 0;
   background-color: #eee;
@@ -94,47 +102,40 @@ main .user-detail {
   font-family: 'Roboto', sans-serif;
 }
 
-.user-menu .card {
-  box-shadow: 0 0 5px #000;
-  transition: .3s transform;
-}
-.user-menu .card:hover {
-  box-shadow: 0 0 8px #000;
-  transform: scale(1.1);
-}
-.user-menu .card button {
-  background-color: #eee;
-  color: #333;
-  border: 1px solid #444;
-  outline: none;
-}
-.user-menu .card h3{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
-}
 
 @media (max-width:768px){
-  aside a {
-    font-size: 16px;
-  }
   .top-head h1 {
     font-size: 24px;
   }
-  .user-menu {
-    flex-wrap: wrap;
-  }
-  .user-detail .current-banlance h3 {
-    font-size: 18px;
-  }
-  .user-menu .card h3{
-    font-size: 18px;
-  }
+  
+  aside a {
+    font-size: 16px;
+    }
+
+    .user-detail .current-banlance h3 {
+      font-size: 18px;
+    }
 }
 
 @media (max-width:576px){
+  .top-head{
+    margin-left: 0;
+  }
+  .top-head h1 {
+    font-size: 18px;
+  }
   aside {
+    width: 60%;
+    padding-top: 1px;
+    margin-top: 70px;
     display: none;
-    left: -300%;
+    /* left: -300%; */
+  }
+  .aside-show {
+    display: block;
+    /* left: 0; */
+    z-index: 2;
+    transition: 5s all;
   }
 
   aside a {
@@ -143,21 +144,10 @@ main .user-detail {
   main {
     margin-left: 0px;
   }
-  .top-head{
-    position: fixed;
-    top: 0;
-    z-index: 1;
-  }
-  .top-head h1 {
-    font-size: 24px;
-  }
-  .user-menu {
-    flex-wrap: wrap;
-  }
-  .user-detail .current-banlance h3 {
-    font-size: 18px;
-  }
-  .user-menu .card h3{
-    font-size: 18px;
-  }
 }
+
+@media (max-width:400px){
+    .top-head h1 {
+      font-size: 4vw;
+    }
+  }
