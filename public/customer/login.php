@@ -8,24 +8,21 @@
     $customer = find_customer_by_email($email);
     if($customer)   {
         //check if account has been activated
-        if($customer['activated'] == 0) {
+        if($customer['activated'] == 1) {
             if($password == $customer['password'])  {
                 // //login successfull
                  log_in_customer($customer);
                 redirect_to(url_for('/customer/index.php?id=' . h(u($customer['id']))));
-                echo 'email and password is correct';
             } else {
                   $errors[] = 'Password and email combination does not match! try again.';
                  
             }
         } else {
-            // $errors[] = 'Please your account has not been activated yet. Your account will be activated soon.';
-            // redirect_to(url_for('/index.php'));
-            echo 'case 2';
+            $errors[] = 'Please your account has not been activated yet. Your account will be activated soon.';
+    
         }
     } else {
          $errors[] = 'Sorry this email is not registered on our database!';
-        //  redirect_to(url_for('/customer/login.php'));
     }
 } else {
     // echo "hello";

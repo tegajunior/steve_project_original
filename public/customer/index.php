@@ -1,6 +1,16 @@
 <?php require_once('../../private/initialize.php'); ?>
 
-<?php require_customer_login(); ?>
+<?php require_customer_login();
+
+// if(isset($_GET['id']) && !empty($_GET['id'])) {
+//     $id = $_GET['id']; 
+// } else {
+//     redirect_to(url_for('/customer/login.php'));
+// }
+//At this point, the user is logged in and the id has been retrieved
+$customer = find_customer_by_id($_SESSION['customer_id']);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +41,9 @@
             <!-- Top Header section and aside nav -->
             <div class="header-aside">
                 <div class="top-head d-flex justify-content-between align-items-center p-3 flex-wrap">
-                    <h1 class="user-name">Welcome <em><?php echo "user-name" ;?></em></h1>
+                    <h1 class="user-name">Welcome <em><?php echo $customer['first_name'] ;?></em></h1>
                     <div class="d-flex flex-nowrap">
-                        <img class="user-image img-fluid rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide.jpg'); ?>" alt="user-image" style="height: 40px; width:40px">
+                        <img class="user-image img-fluid rounded-circle" src="<?php echo $customer['passport_url']; ?>" alt="user-image" style="height: 40px; width:40px">
 
                         <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
                             <i class="fas fa-bars toggle-icon"></i>
@@ -59,7 +69,7 @@
             <main class="position-relation">
                 <div class="jumbotron user-detail m-0">
                     <div class="current-banlance text-center pb-5">
-                        <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em>1000</em></strong></h3>
+                        <h3 class="current-balance m-0">Your current balance is: <br> <strong>$ <em><?php echo $customer['balance']?></em></strong></h3>
                     </div>
 
                     <div class="user-space row no-gutters justify-content-around">
@@ -91,7 +101,9 @@
                     </div>
                 </div>
 
-                <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">copyright &copy; ABF</p>
+                <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">
+                &copy; <?php echo date('Y'); ?> Bank of Abu Dhabi
+                </p>
             </main>
             <!-- end of main section -->
 
@@ -136,7 +148,7 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        Modal body..
+                        contact@uab.in.net
                     </div>
 
                     <!-- Modal footer -->
@@ -162,7 +174,7 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        Modal body..
+                        <?php echo $customer['account_number']; ?>
                     </div>
 
                     <!-- Modal footer -->

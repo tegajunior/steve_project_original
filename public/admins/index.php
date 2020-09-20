@@ -58,7 +58,7 @@ $withdrawal_set = find_all_withdrawal();
             <?php while($withdrawal = mysqli_fetch_assoc($withdrawal_set)) { ?>
               <tr>
                 <td><?php echo h($withdrawal['id']); ?></td>
-                <td><?php echo h($Withdrawal['first_name']); ?></td>
+                <td><?php echo h($withdrawal['first_name']); ?></td>
                 <td><?php echo h($withdrawal['last_name']); ?></td>
                 <td><?php echo h($withdrawal['date_of_withdrawal']); ?></td>
               </tr>

@@ -230,7 +230,39 @@
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
     return $result;
+
+    $result = mysqli_query($db, $sql);
+
+    if($result) {
+      return true;
+    } else {
+      // INSERT failed
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
   }
-  
+  function insert_withdrawal($withdrawal) {
+    global $db;
+
+    $sql = "INSERT INTO withdrawals ";
+    $sql .= "(first_name, last_name, date_of_withdrawal) ";
+    $sql .= "VALUES (";
+    $sql .= "'" . db_escape($db, $withdrawal['first_name']) . "',";
+    $sql .= "'" . db_escape($db, $withdrawal['last_name']) . "',";
+    $sql .= "'" . db_escape($db, $withdrawal['date_of_withdrawal']) . "'";
+    $sql .= ")";
+    
+    $result = mysqli_query($db, $sql);
+
+    if($result) {
+      return true;
+    } else {
+      // INSERT failed
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+  }
   /*__________end of steve_project________*/
 ?>
