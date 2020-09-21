@@ -66,8 +66,8 @@
   .footer-list li, .footer-para{
     font-size: 14px;
   }
-  
-  @media (max-width:1200px) {
+
+  @media (max-width:786px) {
     /* navigation style */
     .my-nav-link{
       font-size: 14px;

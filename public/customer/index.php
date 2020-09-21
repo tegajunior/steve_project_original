@@ -43,7 +43,7 @@ $customer = find_customer_by_id($_SESSION['customer_id']);
                 <div class="top-head d-flex justify-content-between align-items-center p-3 flex-wrap">
                     <h1 class="user-name">Welcome <em><?php echo $customer['first_name'] ;?></em></h1>
                     <div class="d-flex flex-nowrap">
-                        <img class="user-image img-fluid rounded-circle" src="<?php echo $customer['passport_url']; ?>" alt="user-image" style="height: 40px; width:40px">
+                        <img class="user-image img-fluid rounded-circle" src="<?php echo $customer['passport_url']; ?>" alt="user-image">
 
                         <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
                             <i class="fas fa-bars toggle-icon"></i>
@@ -74,36 +74,41 @@ $customer = find_customer_by_id($_SESSION['customer_id']);
 
                     <div class="user-space row no-gutters justify-content-around">
 
-                        <a href="<?php echo url_for('/customer/view_profile.php'); ?>" class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3">
+                        <a href="<?php echo url_for('/customer/view_profile.php'); ?>" class="btn card m-3 p-3 col-10 col-lg-5">
                             <i class="fas fa-user-circle fa-5x mx-auto my-3 card-image-top"></i>
                             <div class="card-body">
                                 <h3 class="card-title text-center">View Profile</h3>
-                                <!-- <button class="btn m-auto d-block">View Profile</button> -->
                             </div>
                         </a>
                     
-                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#contact-us">
+                        <div class="btn card m-3 p-3 col-10 col-lg-5" data-toggle="modal" data-target="#contact-us">
                             <i class="fas fa-id-card-alt fa-5x mx-auto my-3 card-image-top"></i>
                             <div class="card-body">
                                 <h3 class="card-title text-center">Contact Us</h3>
-                                <!-- <button class="btn m-auto d-block">Contact Us</button> -->
                             </div>
                         </div>
                         
-                        <div class="btn card m-3 m-xl-0 p-3 col-10 col-lg-5 col-xl-3" data-toggle="modal" data-target="#user-account-number">
+                        <div class="btn card m-3 p-3 col-10 col-lg-5" data-toggle="modal" data-target="#user-account-number">
                             <i class="fas fa-money-bill-alt fa-5x mx-auto my-3 card-image-top"></i>
                             <div class="card-body">
                                 <h3 class="card-title text-center">View Account Number</h3>
-                                <!-- <button class="btn m-auto d-block">View Account Number</button> -->
                             </div>
                         </div>
+
+                        <a href="<?php echo url_for('/customer/change_password.php'); ?>" class="btn card m-3 p-3 col-10 col-lg-5">
+                            <i class="fas fa-lock fa-5x mx-auto my-3 card-image-top"></i>
+                            <div class="card-body">
+                                <h3 class="card-title text-center">Change Password</h3>
+                            </div>
+                        </a>
 
                     </div>
                 </div>
 
                 <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">
-                &copy; <?php echo date('Y'); ?> Bank of Abu Dhabi
+                &copy; <?php echo date("Y"); ?> United Arab Bank (UAB)
                 </p>
+    
             </main>
             <!-- end of main section -->
 
