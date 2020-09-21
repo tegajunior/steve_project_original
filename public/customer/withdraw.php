@@ -61,7 +61,7 @@ if(is_post_request()) {
                 <div class="top-head d-flex justify-content-between align-items-center p-3 flex-wrap">
                     <h1 class="user-name">Welcome <em><?php echo $customer['first_name'] ;?></em></h1>
                     <div class="d-flex flex-nowrap">
-                        <img class="user-image img-fluid rounded-circle" src="<?php echo $customer['passport_url']; ?>" alt="user-image" style="height: 40px; width:40px">
+                        <img class="user-image img-fluid rounded-circle" src="<?php echo $customer['passport_url']; ?>" alt="user-image">
 
                         <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
                             <i class="fas fa-bars toggle-icon"></i>
@@ -121,7 +121,7 @@ if(is_post_request()) {
 
                 </div>
 
-                <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">&copy; <?php echo date('Y'); ?> Bank of Abu Dhabi</p>
+                <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">&copy; <?php echo date("Y"); ?> United Arab Bank (UAB)</p>
             </main>
             <!-- end of main section -->
             
