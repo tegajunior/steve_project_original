@@ -15,7 +15,7 @@ let registerLoadingSpin = () => {
         return true
     } else if(passwordOne.toString().length < 8 && passwordOne !== passwordTwo) {
         // loadingSpin();
-        alert("password did not match and password is not upto 8 character")
+        alert("password did not match and password is not upto 8 characters")
         return false
     } else if (passwordOne !== passwordTwo) {
         // loadingSpin();
