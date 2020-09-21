@@ -1,11 +1,9 @@
 <?php 
    require_once('../../private/initialize.php');
-    //require_customer_login();
 
-    /*if(!isset($_GET['id'])) {
-        redirect_to(url_for('/index.php'));
-    }
-    $id = $_GET['id'];
+    require_customer_login();
+
+    $id = $_SESSION['customer_id'];
 
     if(is_post_request()) {
         //handles post request from a user
@@ -13,29 +11,20 @@
         $customer['id'] = $id;
         $customer['first_name'] = $_POST['first_name'] ?? '';
         $customer['last_name'] = $_POST['last_name'] ?? '';
-        $customer['gender'] = $_POST['gender'] ?? '';
-        $customer['occupation'] = $_POST['occupation'];
-        $customer['date_of_birth'] = $_POST['date_of_birth'] ?? '';
-        $customer['address'] = $_POST['address'] ?? '';
-        $customer['country'] = $_POST['country'] ?? '';
         $customer['phone_number'] = $_POST['phone_number'] ?? '';
-        $customer['password'] = $_POST['password'] ?? '';
-        //the three fields below should be hidden to the customer edit form
-        //but visible to the admin edit form
-        $customer['balance'] = $_POST['balance'] ?? '';
-        $customer['account_number'] = $_POST['account_number'] ?? '';
-        $customer['activated'] = $_POST['activated'];
+        $customer['occupation'] = $_POST['occupation'] ?? '';
+    
 
-        $result = update_customer($customer);
+        $result = update_customer_2($customer);
 
         if($result === true) {
-            redirect_to(url_for('/customer/show.php?id=' . h(u($id))));
+            redirect_to(url_for('/customer/view_profile.php'));
         } else {
             $error = $result;
         }
     } else {
         $customer = find_customer_by_id($id);
-    }*/
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,9 +55,9 @@
             <!-- Top Header section and aside nav -->
             <div class="header-aside">
                 <div class="top-head d-flex justify-content-between align-items-center p-3 flex-wrap">
-                    <h1 class="user-name">Welcome <em><?php echo "user-name" ;?></em></h1>
+                    <h1 class="user-name">Welcome <em><?php echo $customer['first_name']; ?></em></h1>
                     <div class="d-flex flex-nowrap">
-                        <img class="user-image img-fluid rounded-circle" src="<?php echo url_for('/images/homepage_assets/slide.jpg'); ?>" alt="user-image" style="height: 40px; width:40px">
+                        <img class="user-image img-fluid rounded-circle" src="<?php echo $customer['passport_url']; ?>" alt="user-image" style="height: 40px; width:40px">
 
                         <button class="btn btn-lg d-flex d-sm-none" id="nav-toggle" type="button">
                             <i class="fas fa-bars toggle-icon"></i>
@@ -102,57 +91,57 @@
                             <div class="form-input-wrapper row no-gutters justify-content-between">
 
                                 <div class="passport col-12 text-center m-3">
-                                    <img src="<?php echo url_for('/images/page_assets/uab_image_2.jpeg'); ?>" alt="User Passport" class="user-passport rounded-circle">
+                                    <img src="<?php echo $customer['passport_url']; ?>" alt="User Passport" class="user-passport rounded-circle">
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0" for="firstname">Firstname</label>
-                                    <input type="text" name="first_name" id="firstname" class="form-value container-fluid p-1" placeholder="Enter Firstname">
+                                    <input type="text" name="first_name" id="firstname" class="form-value container-fluid p-1" placeholder="Enter Firstname" value="<?php echo $customer['first_name']; ?>">
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0" for="lastname">Lastname</label>
-                                    <input type="text" name="last_name" id="lastname" class="form-value container-fluid p-1" placeholder="Enter Lastname">
+                                    <input type="text" name="last_name" id="lastname" class="form-value container-fluid p-1" placeholder="Enter Lastname" value="<?php echo $customer['last_name']; ?>">
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0">Email</label>
-                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo $customer['email']; ?>" disabled>
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0" for="phonenumber">Phone Number</label>
-                                    <input type="text" name="phone_number" id="phonenumber" class="form-value container-fluid p-1" placeholder="Enter Phone Number">
+                                    <input type="text" name="phone_number" id="phonenumber" class="form-value container-fluid p-1" placeholder="Enter Phone Number" value="<?php echo $customer['phone_number']; ?>">
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0">Date of Birth</label>
-                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo $customer['date_of_birth']; ?>" disabled>
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0" for="occupation">Occupation</label>
-                                    <input type="text" name="occupation" id="occupation" class="form-value container-fluid p-1" placeholder="Enter Occupation">
+                                    <input type="text" name="occupation" id="occupation" class="form-value container-fluid p-1" placeholder="Enter Occupation" value="<?php echo $customer['occupation']; ?>">
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0">Country</label>
-                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo $customer['country']; ?>" disabled>
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0">Address</label>
-                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo $customer['address']; ?>" disabled>
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0">Account Number</label>
-                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo $customer['account_number'] ?>" disabled>
                                 </div>
 
                                 <div class="input-wrapper col-lg-6 my-3">
                                     <label class="form-description container-fluid py-0 px-1 m-0">Activated</label>
-                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo 'Good' ?>" disabled>
+                                    <input type="text" class="form-value container-fluid p-1" value="<?php echo $customer['activated'] === 0 ?  "No" : "Yes"; ?>" disabled>
                                 </div>
 
                                 <div class="withdraw-btn col-12 text-right">

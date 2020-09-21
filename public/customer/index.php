@@ -2,11 +2,6 @@
 
 <?php require_customer_login();
 
-// if(isset($_GET['id']) && !empty($_GET['id'])) {
-//     $id = $_GET['id']; 
-// } else {
-//     redirect_to(url_for('/customer/login.php'));
-// }
 //At this point, the user is logged in and the id has been retrieved
 $customer = find_customer_by_id($_SESSION['customer_id']);
 

@@ -104,6 +104,32 @@
     }
   }
 
+  function update_customer_2($customer) {
+    global $db;
+    
+    $sql = "UPDATE customers SET ";
+    $sql .= "first_name='" . db_escape($db, $customer['first_name']) . "',";
+    $sql .= "last_name='" . db_escape($db, $customer['last_name']) . "',";
+    $sql .= "phone_number='" . db_escape($db, $customer['phone_number']) . "',";
+    $sql .= "occupation='" . db_escape($db, $customer['occupation']) . "' ";
+    $sql .= "WHERE id='" . db_escape($db, $customer['id']) . "' ";
+    $sql .= "LIMIT 1";
+
+    $result = mysqli_query($db, $sql);
+
+    
+    // For UPDATE statements, $result is true or false
+    if($result) {
+      return true;
+    } else {
+      // UPDATE failed
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+
+  }
+
   function find_customer_by_email($email) {
     global $db;
 
