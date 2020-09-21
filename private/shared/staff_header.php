@@ -18,12 +18,11 @@
 
   <body>
     <header>
-      <h1>GBI Staff Area</h1>
+      <h1>United Bank of Arab</h1>
     </header>
 
     <nav>
       <ul>
-        <li>User: <?php echo $_SESSION[' admin_username'] ?? ''; ?></li>
         <li><a href="<?php echo url_for('/admins/change_password.php'); ?>">Change Password</a></li>
         <li><a href="<?php echo url_for('/admins/logout.php'); ?>">Logout</a></li>
       </ul>

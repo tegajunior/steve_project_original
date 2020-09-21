@@ -11,11 +11,13 @@ $withdrawal_set = find_all_withdrawal();
 ?>
 
 <?php $page_title = 'Admins'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
-
+<?php include(SHARED_PATH . '/staff_header.php'); 
+  display_session_message();
+?>
+<br><br><br>
 <div id="content">
-  <div class="customer listing">
-    <h1>Customers</h1>
+  <div class="container">
+    <h4>Registered Customers</h4><br>
 
     <table class="list">
       <tr>
@@ -23,7 +25,6 @@ $withdrawal_set = find_all_withdrawal();
         <th>First</th>
         <th>Last</th>
         <th>Email</th>
-        <th>&nbsp;</th>
         <th>&nbsp;</th>
         <th>&nbsp;</th>
         <th>&nbsp;</th>
@@ -38,15 +39,13 @@ $withdrawal_set = find_all_withdrawal();
           <td><a class="action" href="<?php echo url_for('/admins/show.php?id=' . h(u($customer['id']))); ?>">View</a></td>
           <td><a class="action" href="<?php echo url_for('/admins/edit.php?id=' . h(u($customer['id']))); ?>">Edit</a></td>
           <td><a class="action" href="<?php echo url_for('/admins/delete.php?id=' . h(u($customer['id']))); ?>">Delete</a></td>
-          <td><a class="action" href="<?php echo url_for('/admins/message.php?id=' . h(u($customer['id']))); ?>">Message</a></td>
         </tr>
       <?php } ?>
     </table> 
     <br><br>
   </div>
-  <div class="withdraw listing">
-        <h1>Withdrawl</h1>
-
+  <div class="container">
+        <h4>Attempted Withdrawals</h4><br>
         <table class="list">
             <tr>
               <th>ID</th>
@@ -67,8 +66,8 @@ $withdrawal_set = find_all_withdrawal();
         <br><br>
     </div>
 
-    <div class="messages listing">
-          <h1>Messages</h1>
+    <div class="container">
+          <h4>Messages Sent From Contact Form</h4>
             <table class="list">
               <tr>
                 <th>ID</th>
@@ -84,10 +83,7 @@ $withdrawal_set = find_all_withdrawal();
                 </tr>
               <?php } ?>
             </table>
-    </div>
-  
-
-
+    </div><br><br><br>
     <?php
       mysqli_free_result($customer_set);
       mysqli_free_result($withdrawal_set);

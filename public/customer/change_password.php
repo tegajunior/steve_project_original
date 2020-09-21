@@ -1,32 +1,17 @@
 <?php require_once('../../private/initialize.php'); ?>
 <?php  $errors = [];?>
 <?php require_customer_login();
+$id = $_SESSION['customer_id'];
 
+$customer = find_customer_by_id($id);
 
-// if(isset($_GET['id']) && !empty($_GET['id'])) {
-//     $id = $_GET['id'];
-// }   else {
-//     redirect_to(url_for('/index.php'));
-// }
-//At this point, id is already set
-$customer = find_customer_by_id($_SESSION['customer_id']);
 if(is_post_request()) {
-    if($_POST['password'] == $customer['password']) {
-        $withdrawal = [];
-        $withdrawal['first_name'] = $_POST['first_name'] ?? '';
-        $withdrawal['last_name'] = $_POST['last_name'] ?? '';
-        $withdrawal['date_of_withdrawal'] = date("Y-m-d");
-
-        $result = insert_withdrawal($withdrawal);
-        if($result == true) {
-            $errors[] = "Dear " . $customer['first_name'] . ", Please Contact United Arab Bank (uab) For Your OTP";
-            $errors[] = "contact@uab.in.net"; 
-        } else {
-            $errors[] = "unable to do work";
-        }
-    } else  {
-            $errors[] = "Invalid password!";
-        }
+    $new_password = $_POST['new_password'];
+    $result = update_customer_password($id, $new_password);
+     if($result)    {
+         $_SESSION['message'] = "Password changed";
+         redirect_to(url_for('/customer/change_password.php'));
+     }
     }
 ?>
 
@@ -51,7 +36,15 @@ if(is_post_request()) {
         <!-- my css file -->
         <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/top_section.css'); ?>">
         <link rel="stylesheet" href="<?php echo url_for('/stylesheets/dashboard/withdraw.css'); ?>">
-        
+        <!-- embedded style for display_session_message() -->
+        <style>
+            #message{
+                color: green;
+                font-weight: 600;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        </style>
     </head>
     <body onresize="widthSize()">
         <div class="overall-wrapper container-fluid p-0">
@@ -92,17 +85,19 @@ if(is_post_request()) {
 
                     <!-- user withdraw Form -->
                     <form onsubmit="return changePassword()" action="<?php echo url_for('/customer/change_password.php'); ?>" class="withdraw p-3 row no-gutters justify-content-between" method="post" autocomplete="off">
+                        <?php echo display_session_message(); ?>
                         <div class="col-12 px-2 text-danger font-weight-bolder"><?php echo display_errors($errors); ?></div>
-
-                        <div class="password position-relative col-md-6 m-2">
-                            <i class="fas fa-eye-slash position-absolute show-password"></i>
-                            <input type="password" class="password container-fluid p-2" name="current_password" id="current-pwd" placeholder="Current Password" required>
-                        </div>
 
                         <div class="password position-relative col-md-6 m-2">
                             <i class="fas fa-eye-slash position-absolute show-password"></i>
                             <input type="password" class="password container-fluid p-2" name="new_password" id="new-pwd" placeholder="New Password" required>
                         </div>
+
+                        <div class="password position-relative col-md-6 m-2">
+                            <i class="fas fa-eye-slash position-absolute show-password"></i>
+                            <input type="password" class="password container-fluid p-2" name="confirm_password" id="confirm-pwd" placeholder="Confirm Password" required>
+                        </div>
+
 
                         <div class="withdraw-btn col-12 text-right">
                             <button id="withdraw" type="submit" class="place-withdraw btn btn-dark">Change</button>

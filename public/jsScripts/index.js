@@ -13,3 +13,10 @@ myNavLink.forEach(link => {
     link.addEventListener("click", activeLink)
 })
 
+
+
+let alertSuccess = () => {
+    // alert("Your Message has been sent successfully")
+    document.getElementById("message-sent").style.display = "flex"
+    return true
+}

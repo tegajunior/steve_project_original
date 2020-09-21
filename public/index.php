@@ -1,4 +1,12 @@
-<?php require_once('../private/initialize.php'); ?>
+<?php require_once('../private/initialize.php'); 
+    if(is_post_request())   {
+        $user = [];
+        $user['email'] = $_POST['email'];
+        $user['content'] = $_POST['content'];
+
+        $result = send_message_to_admin($user);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -222,19 +230,25 @@
                     <span>contact@uab.in.net</span>
                 </p>
             </div>
-            <form class="col-md-7" method="post" action="<?php echo url_for('/admins/contact_admin.php'); ?>">
+            <form onsubmit="return alertSuccess()" class="col-md-7" method="post" action="<?php echo url_for('/index.php'); ?>" autocomplete="off">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                     <span class="input-group-text">Email</span>
                     </div>
-                    <input type="email" class="form-control px-3" placeholder="enter your email here!" name="email">
+                    <input type="email" class="form-control px-3" placeholder="enter your email here!" name="email" required>
                 </div>
-                <textarea rows="10" class="contact-textarea container-fluid p-2" name="content">enter your message here!</textarea>
+                <textarea rows="10" class="contact-textarea container-fluid p-2" name="content" required></textarea>
 
                 <div class="text-right">
-                    <button class="contact-submit btn text-white mt-2">Send</button>
+                    <button class="contact-submit btn text-white mt-2" type="submit" id="send-message">Send</button>
                 </div>
             </form>
+
+            <div class="message-sent justify-content-between" id="message-sent">
+                <h2 class="message-sent-text text-success font-weight-bolder">Your Message has been sent successfully</h2>
+                <button id="message-close-btn" class="btn btn-dark btn-lg">&times;</button>
+            </div>
+            
         </div>
          <!-- END of contact us section -->
 

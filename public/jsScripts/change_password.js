@@ -12,13 +12,18 @@ let loadingSpin = () => {
 
 let changePassword = () => {
     let newPassword = document.getElementById("new-pwd").value;
-    // let passwordTwo = document.getElementById("password-two").value;
-    if (newPassword.toString().length >= 8) {
+    let comfirmPassword = document.getElementById("confirm-pwd").value;
+    if (comfirmPassword == newPassword && comfirmPassword.toString().length >= 8) {
         loadingSpin()
         return true
-    } else if(newPassword.toString().length < 8) {
-        // loadingSpin();
-        alert("password is not upto 8 characters")
+    } else if(comfirmPassword.toString().length < 8 && comfirmPassword !== newPassword) {
+        alert("password did not match and password is not upto 8 characters")
+        return false
+    } else if (comfirmPassword !== newPassword) {
+        alert("password did not match")
+        return false
+    } else {
+        alert("password is less than 8 characters")
         return false
     }
 }

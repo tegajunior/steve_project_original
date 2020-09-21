@@ -34,7 +34,7 @@ if(is_post_request()) {
 
         <h1>Change Password</h1>
         <?php echo display_errors($errors); ?>
-        <form action="<?php echo url_for('/admins/login.php'); ?>" method="post">
+        <form action="<?php echo url_for('/admins/change_password.php'); ?>" method="post">
             New Password:<br />
             <input type="password" name="new_password" value="" /><br />
             Again:<br />

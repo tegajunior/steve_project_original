@@ -130,6 +130,29 @@
 
   }
 
+  function update_customer_password($id, $new_password)  {
+    global $db;
+
+    $sql = "UPDATE customers ";
+    $sql .= "SET password ='" . db_escape($db, $new_password) . "' ";
+    $sql .= "WHERE id ='" . db_escape($db, $id) . "' ";
+    $sql .= "LIMIT 1";
+    
+    $result = mysqli_query($db, $sql);
+
+        // For UPDATE statements and INSERT statements, $result is true or false
+    if($result) {
+      return true;
+      } else {
+      // UPDATE failed
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+    
+  }
+
+
   function find_customer_by_email($email) {
     global $db;
 
@@ -256,17 +279,6 @@
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
     return $result;
-
-    $result = mysqli_query($db, $sql);
-
-    if($result) {
-      return true;
-    } else {
-      // INSERT failed
-      echo mysqli_error($db);
-      db_disconnect($db);
-      exit;
-    }
   }
   function insert_withdrawal($withdrawal) {
     global $db;
@@ -285,6 +297,24 @@
       return true;
     } else {
       // INSERT failed
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+  }
+
+  function update_admin_password($new_password) {
+    global $db;
+
+    $sql = "UPDATE admins ";
+    $sql .= "SET password ='" . db_escape($db, $new_password) . "'";
+    $result = mysqli_query($db, $sql);
+
+        // For UPDATE statements and INSERT statements, $result is true or false
+    if($result) {
+      return true;
+      } else {
+      // UPDATE failed
       echo mysqli_error($db);
       db_disconnect($db);
       exit;

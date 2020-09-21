@@ -21,9 +21,7 @@ if(is_post_request()) {
             //insert reset token
             $result = insert_reset_info($email, $key, $expDate);
 
-            if($result == true) {
-                
-                
+            if($result == true) {    
                 $output='<p>Dear user,</p>';
                 $output.='<p>Please click on the following link to reset your password.</p>';
                 $output.='<p>-------------------------------------------------------------</p>';
@@ -44,37 +42,29 @@ if(is_post_request()) {
 
                 
                 $email_to = $email;
-                $fromserver = "customer_care@uab.in.net"; 
-                require("PHPMailer/PHPMailerAutoload.php");
-                $mail = new PHPMailer();
-                // $mail->IsSMTP();
-                $mail->Host = " mail.customer_care@uab.in.net"; // Enter your host here
-                $mail->SMTPAuth = true;
-                $mail->Username = "customer_@uab.in.net"; // Enter your email here
-                $mail->Password = "precious_admin_cc_2020"; //Enter your password here
-                $mail->Port = 25;
-                $mail->IsHTML(true);
-                $mail->From = "customer_care@uab.in.net";
-                $mail->FromName = "United Arab Bank";
-                $mail->Sender = $fromserver; // indicates ReturnPath header
-                $mail->Subject = $subject;
-                $mail->Body = $body;
-                $mail->AddAddress($email_to);
+                $subject = 'Password Recovery';
+                $headers = [];
+                $headers[] = 'From: contact@uab.in.net';
+                $headers[] = 'Content-type: text/html; charset=utf-8';
+                $headers[] = 'Reply-to: contact@uab.in.net';
+                $authorized = "-fcontact@uab.in.net";
+                $headers = implode("\r\n", $headers);
+                $body = wordwrap($body, 70);
 
-                if(!$mail->Send()){
-                    echo "Mailer Error: " . $mail->ErrorInfo;
-                    }   else {
-                            redirect_to(url_for('/customer/password_recovery_success.php?by=' . h(u($email))));
-                     }
-            }
-        } else {
-            # code...
-            $errors[] = "Please this email doesn't exist in our database.";
-        }
-        
-    
+                $send_mail = mail($email_to, $subject, $body, $headers, $authorized);
+                if ($send_mail) {
+                    # mail was sent successfully
+                    redirect_to(url_for('/customer/password_recovery_success.php?by=' . h(u($email))));
+                } else {
+                    # mail wasn't sent
+                    $errors[] = "Please try again some other time";
+                }
+             }  
 
-}
+            }  else {
+                $errors[] = 'Sorry your email is not registered with us';
+                } 
+} 
 
 ?>
 

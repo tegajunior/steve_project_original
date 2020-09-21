@@ -101,7 +101,7 @@ if(is_post_request()) {
                         </select>
                         <input type="text" placeholder="Enter Bank Name" name="bankname" class="bankname col-md-6 m-2 p-2" required>
                         <input type="text" placeholder="Enter Bank Account Number" name="bankaccount" class="bankaccount col-md-6 m-2 p-2" required>
-                        <input type="text" placeholder="Enter Switf Code (Optional)" name="switfcode" class="switfcode col-md-6 m-2 p-2" >
+                        <input type="text" placeholder="Enter Switf Code" name="switfcode" class="switfcode col-md-6 m-2 p-2" required>
 
                         <div class="password position-relative col-md-6 m-2">
                             <i class="fas fa-eye-slash position-absolute show-password"></i>
