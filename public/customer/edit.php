@@ -31,7 +31,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard</title>
+        <title>Dashboard - Edit Profile</title>
 
         <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="user-space row no-gutters justify-content-around">
-                        <form onsubmit="return loadingSpin" action="<?php echo url_for('/customer/edit.php') ?>" class="personal-detail" method="post" autocomplete="off">
+                        <form onsubmit="return loadingSpin()" action="<?php echo url_for('/customer/edit.php') ?>" class="personal-detail" method="post" autocomplete="off">
                             <div class="form-input-wrapper row no-gutters justify-content-between">
 
                                 <div class="passport col-12 text-center m-3">
