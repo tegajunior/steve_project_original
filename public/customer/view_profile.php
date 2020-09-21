@@ -143,7 +143,7 @@
                     </div>
                 </div>
 
-                <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">copyright &copy; ABF</p>
+                <p class="footer container-fluid pr-4 position-fixed fixed-bottom m-0 text-right">&copy; <?php echo date("Y"); ?> United Arab Bank (UAB)</p>
             </main>
             <!-- end of main section -->
             
