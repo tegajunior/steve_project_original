@@ -145,8 +145,8 @@
                     <img src="<?php echo url_for('/images/page_assets/uab_image_3.jpeg'); ?>" class="img-fluid rounded-circle">
                 </div>
                 <div class="col-md-8 px-2 about-description">
-                    <p>DFM operates as a secondary market for the trading of securities issued by public shareholding companies, bonds issued by federal or local governments, local public institutions and mutual funds as wel as other local or foreign DFM approved financial instruments.</p>
-                    <p>The Dubai Financial Market(DFM) is governed and regulated by the UAE Securities and Commodities Authority (SCA) which has the authority to impose laws and standards which the DFM must comply</p>
+                    <p>United Arab Bank operates as a secondary market for the trading of securities issued by public shareholding companies, bonds issued by federal or local governments, local public institutions and mutual funds as well as other local or foreign approved financial instruments.</p>
+                    <p>The United Arab Bank Financial Market(DFM) is governed and regulated by the UAE Securities and Commodities Authority (SCA) which has the authority to impose laws and standards which the DFM must comply</p>
                 </div>
             </div>
 
@@ -155,7 +155,7 @@
                     <img src="<?php echo url_for('/images/page_assets/uab_image_1.jpeg'); ?>" class="img-fluid rounded-circle">
                 </div>
                 <div class="col-md-8 px-2 about-description">
-                    <p>Commercial Bank of Dubai is a UAE banking and financial services corporation headquartered in Deira, Dubai. With more than $23 billion in assets, Gulf Business listed CBD as the 7th largest bank in the UAE, based on total assets. It also figures in the Dubai Financial Market index.</p>
+                    <p>United Arab Bank is committed to build sustainable long-term partnerships with our key stakeholders, offering a superior customer experience, creating shareholder value, and adopting an innovative banking approach while remaining loyal to our nation's heritage and contributing to the overall development of the UAE.</p>
                 </div>
             </div>
 
@@ -164,8 +164,8 @@
                     <img src="<?php echo url_for('/images/page_assets/uab_image_2.jpeg'); ?>" class="img-fluid rounded-circle">
                 </div>
                 <div class="col-md-8 px-2 about-description">
-                    <p>Established as a public institution with an independent legal entity by virtue of Decree 14/2000 issued by the Government of Dubai, the DFM lanched its activities on 26th March 2000.</p>
-                    <p>within a short period of time, the Dubai Finanical Market(DFM) has fast developed into a leading financial market across the region. its ongoing efforts and strategic initiatives have further reinforced Dubai as a centre of excellence in this part of the world and enhanced its leading postion as a powerful capital market hub which embraces international best practices to meet the evolving needs of its investors locally and internationally.</p>
+                    <p>Established as a public institution with an independent legal entity by virtue of Decree 14/2000 issued by the Government.</p>
+                    <p>within a short period of time, has fast developed into a leading financial market across the region. its ongoing efforts and strategic initiatives enhanced its leading postion as a powerful capital market hub which embraces international best practices to meet the evolving needs of its investors locally and internationally.</p>
                 </div>
             </div>
 
