@@ -61,12 +61,6 @@ function populateCountry () {
         countries.appendChild(option);
         // console.log(option)
     }
-
-    // result.forEach(country => {
-    //     option.innerHTML = country.name;
-    //     countries.appendChild(option);
-    //     console.log(option)
-    // })
 }
 
 populateCountry();
