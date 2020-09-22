@@ -103,16 +103,16 @@
 
                         <?php echo display_errors($errors); ?>
 
-                        <input type="text" name="first_name" placeholder="Firstname*" required autofocus>
-                        <input type="text" name="last_name" placeholder="Lastname*" required>
+                        <input type="text" name="first_name" placeholder="First name*" required autofocus>
+                        <input type="text" name="last_name" placeholder="Last name*" required>
 
                         <select name="gender" id="gender">
-                            <option value="default">Gender</option>
+                            <option value="default">Gender*</option>
                             <option value="male">Male</option>
                             <option value="male">Female</option>
                         </select> 
 
-                        <input type="text" name="email" placeholder="Email" autocomplete="" required>
+                        <input type="text" name="email" placeholder="Email*" autocomplete="" required>
 
                         <div class="position-relative">
                             <i class="show-password fas fa-eye-slash position-absolute"></i>
@@ -126,15 +126,15 @@
                         
                         <input type="date" name="date_of_birth" placeholder="Date of Birth*" required>
 
-                        <input type="text" name="occupation" placeholder="Occupation" required>
+                        <input type="text" name="occupation" placeholder="Occupation*" required>
 
                         <select name="country" id="country">
-                            <option value="default">select-Country</option>
+                            <option value="default">select-Country*</option>
                         </select>
 
-                        <input type="text" name="address" placeholder="address" required>
+                        <input type="text" name="address" placeholder="address*" required>
 
-                        <input type="text" name="phone_number" placeholder="phone number" required>
+                        <input type="text" name="phone_number" placeholder="phone number*" required>
 
                         <div class="text-center my-2">
                             <span class="my-spin spinner-border spinner-border-lg text-success"></span>
